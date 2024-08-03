@@ -1,0 +1,24 @@
+@import "../../../stylesConfig/stylesConfig.scss";
+
+.lineContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  .line {
+    width: 10%;
+    height: 0.3rem;
+    background-color: $primary-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .lineContainer {
+    margin-top: 5rem;
+
+    .line {
+      width: 10%;
+      height: 0.2rem;
+    }
+  }
+}

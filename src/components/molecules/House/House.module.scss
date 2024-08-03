@@ -1,0 +1,36 @@
+.houseCon {
+  .titleCon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 1.5rem;
+      font-style: italic;
+      width: 50%;
+    }
+  }
+}
+
+.galleryCon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .houseCon {
+    .titleCon {
+      p {
+        width: 70%;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .galleryCon {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

@@ -1,0 +1,46 @@
+// PhotoGallery.module.scss
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
+  width: 75%;
+}
+
+.photo {
+  overflow: hidden;
+}
+
+.vertical {
+  grid-row-end: span 2;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.horizontal {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+  }
+}

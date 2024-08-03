@@ -1,0 +1,186 @@
+@import "../../../stylesConfig/stylesConfig.scss";
+
+nav {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: $margin-large;
+  padding-right: $margin-large;
+  padding-top: $margin-medium;
+
+  img.logo {
+    width: 20rem !important;
+  }
+
+  .nav_cont {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    background: none;
+
+    li {
+      list-style: none; /* Remove default list style */
+      padding: 1rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      color: $primary-color; /* Ensure text color is set */
+
+      &::marker {
+        content: ""; /* Remove the marker */
+      }
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+      }
+
+      &:hover .dropdown {
+        display: flex;
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 4rem;
+        flex-direction: column;
+        list-style: none;
+        background: #fff;
+        box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        padding: 0;
+        z-index: 5;
+        width: 12rem;
+        li {
+          padding: 1rem;
+          &:hover {
+            background-color: #d7d7d7;
+            border-left: 7px solid $primary-color;
+          }
+          a {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .menuIcon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 1.5remx;
+    right: 2rem;
+
+    z-index: 10000;
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: $primary-color;
+      margin: 4px 0;
+      transition: transform 0.4s, opacity 0.4s, background-color 0.4s;
+    }
+
+    &.open .bar {
+      background-color: $secondary-color; /* Change to the color you want when menu is open */
+    }
+
+    &.open .bar:nth-child(1) {
+      transform: translateY(11px) rotate(45deg);
+    }
+
+    &.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.open .bar:nth-child(3) {
+      transform: translateY(-11px) rotate(-45deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding-left: $margin-small;
+    padding-right: $margin-small;
+
+    img.logo {
+      width: 12rem !important;
+    }
+
+    .menuIcon {
+      display: flex;
+    }
+
+    ul,
+    .dropdown {
+      flex-direction: column;
+    }
+
+    .nav_cont {
+      align-items: center;
+      justify-content: flex-start;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 70%;
+      padding-top: 5rem;
+      padding-left: 1rem;
+      background: $primary-color;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 9999;
+
+      &.open {
+        transform: translateX(0);
+      }
+
+      li {
+        display: block;
+        font-size: 1rem;
+        padding: 1rem;
+        padding-left: 1rem !important;
+        color: #fff !important;
+        width: 100%;
+        a {
+          color: #fff;
+        }
+
+        .dropdown {
+          display: flex;
+          justify-self: flex-start;
+          position: relative;
+          background: none;
+          padding: 0;
+          width: 100%;
+          top: 1.5rem;
+          flex-direction: column;
+          list-style: none;
+          background: $primary-color;
+          box-shadow: 5px 0px 5px 0px rgba(0, 0, 0, 0.2);
+          z-index: 5;
+
+          li:hover {
+            background: $secondary-color;
+          }
+          li {
+            padding: 1.2rem 1rem;
+            border-left: 7px solid #d7d7d7;
+
+            &:hover {
+              background-color: $secondary-color;
+            }
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

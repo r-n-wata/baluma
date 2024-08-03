@@ -1,0 +1,21 @@
+@import "../../../stylesConfig/stylesConfig.scss";
+
+.titleCon {
+  margin-top: $margin-large;
+  .title {
+    display: flex;
+    justify-content: center;
+
+    font-size: 3rem;
+    font-family: Helvetica;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleCon {
+    .title {
+      font-size: 1.4rem !important;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../../stylesConfig/stylesConfig.scss";
+h2 {
+  font-size: 3rem;
+  font-family: Helvetica;
+  margin: 0;
+}
+.about {
+  width: 50%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  .about {
+    width: 90%;
+    height: 50vh;
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}

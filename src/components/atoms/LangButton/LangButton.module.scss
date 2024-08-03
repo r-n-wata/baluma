@@ -1,0 +1,15 @@
+.langButtonCon {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  button {
+    background-color: transparent;
+    border: none;
+    img {
+      background-color: rgb(252, 251, 251);
+      border-radius: 50%;
+      width: 2.5rem;
+    }
+  }
+}
