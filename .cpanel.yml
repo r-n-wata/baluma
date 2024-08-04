@@ -4,4 +4,4 @@ deployment:
     - npm install # Install dependencies
     - npm run build # Build the application
     - export DEPLOY_DIR=/home4/balumaba/public_html # Set deployment directory
-    - /bin/cp -R dist $DEPLOY_DIR # Copy built files to the deployment directory
+    - /bin/cp -R dist/* $DEPLOY_DIR # Copy built files to the deployment directory
