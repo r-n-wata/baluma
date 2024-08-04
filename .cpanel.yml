@@ -1,5 +1,4 @@
 deployment:
   tasks:
     - export DEPLOY_DIR=/home4/balumaba/public_html
-    - /bin/cp -R dist/* $DEPLOY_DIR
-    - /bin/cp .env $DEPLOY_DIR/.env
+    - /bin/echo "Testing deployment" > $DEPLOY_DIR/test.txt
