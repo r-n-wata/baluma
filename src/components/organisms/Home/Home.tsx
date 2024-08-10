@@ -4,9 +4,10 @@ import Slide from "../../molecules/Slide/Slide";
 import LangButton from "../../atoms/LangButton/LangButton";
 import styles from "./Home.module.scss";
 import ArrowDown from "../../../assets/home/arrow-down.png";
+import WhatsAppButton from "../../atoms/WhatsAppButton/WhatsAppButton";
 function Home() {
   const handleScroll = () => {
-    const target = document.getElementById("gallery");
+    const target = document.getElementById("about");
     scrollToElement(target, 1000); // Scroll to target over 2000 milliseconds (2 seconds)
   };
 
@@ -57,6 +58,10 @@ function Home() {
           <Slide />
         </section>
         <div className={styles.langButton}>
+          <WhatsAppButton
+            phoneNumber="+529831312042"
+            message="Hello, I'm interested in your property. Please contact me."
+          />
           <LangButton />
         </div>
       </div>

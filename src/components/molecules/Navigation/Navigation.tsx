@@ -42,12 +42,37 @@ function Navigation() {
             </li>
             <li>
               <Link to="/casas/nieves-house" onClick={toggleMenu}>
-                Submenu 2
+                Nieve's house
               </Link>
             </li>
             <li>
               <Link to="/casas/marias-house" onClick={toggleMenu}>
-                Submenu 3
+                Maria's loft
+              </Link>
+            </li>
+            <li>
+              <Link to="/casas/casa-azul" onClick={toggleMenu}>
+                Casa Azul
+              </Link>
+            </li>
+            <li>
+              <Link to="/casas/casa-azul-corazon" onClick={toggleMenu}>
+                Casa Azul Corazon
+              </Link>
+            </li>
+            <li>
+              <Link to="/casas/begos-house" onClick={toggleMenu}>
+                Begos House
+              </Link>
+            </li>
+            <li>
+              <Link to="/casas/changos-house" onClick={toggleMenu}>
+                Changos House
+              </Link>
+            </li>
+            <li>
+              <Link to="/casas/mini-house" onClick={toggleMenu}>
+                Mini House
               </Link>
             </li>
           </ul>

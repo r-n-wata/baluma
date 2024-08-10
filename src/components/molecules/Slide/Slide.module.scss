@@ -53,3 +53,12 @@
     }
   }
 }
+
+@media (max-width: 425px) {
+  :global {
+    .swiper-backface-hidden {
+      width: 100%;
+      height: 15rem;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 @import "../../../stylesConfig/stylesConfig.scss";
 $background-color: #5b5a5a;
-$background-image: url("../../../assets/background.jpg");
+$background-image: url("../../../assets/background2.jpg");
 $gradient-start: rgba(45, 36, 34, 0.2);
 $gradient-end: rgba(77, 67, 59, 0.2);
 
@@ -73,10 +73,16 @@ main {
           ),
           $background-image;
 
-        min-height: 40vh;
+        min-height: 25vh;
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+        margin-bottom: 0;
+      }
+
+      .arrowButton {
+        bottom: 1.2rem;
+        width: 8%;
       }
     }
 

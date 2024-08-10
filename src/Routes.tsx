@@ -1,7 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/organisms/Home/Home";
 import House from "./components/molecules/House/House";
-import { luciasPhotos, nievesHouse, mariasHouse } from "./utils/utils";
+import {
+  luciasPhotos,
+  nievesHouse,
+  mariasHouse,
+  miniHouse,
+  casaAzul,
+  casaAzulCorazon,
+  begosHouse,
+  changosHouse,
+} from "./utils/utils";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +34,35 @@ const router = createBrowserRouter([
   {
     path: "/casas/marias-house",
     element: <House title="Marias House" photos={mariasHouse} desc="heeepp" />,
+  },
+
+  {
+    path: "/casas/casa-azul",
+    element: <House title="Casa Azul" photos={casaAzul} desc="heeepp" />,
+  },
+
+  {
+    path: "/casas/casa-azul-corazon",
+    element: (
+      <House title="Casa Azul Corazon" photos={casaAzulCorazon} desc="heeepp" />
+    ),
+  },
+
+  {
+    path: "/casas/begos-house",
+    element: <House title="Begos House" photos={begosHouse} desc="heeepp" />,
+  },
+
+  {
+    path: "/casas/changos-house",
+    element: (
+      <House title="Changos House" photos={changosHouse} desc="heeepp" />
+    ),
+  },
+
+  {
+    path: "/casas/mini-house",
+    element: <House title="Mini House" photos={miniHouse} desc="heeepp" />,
   },
 ]);
 
