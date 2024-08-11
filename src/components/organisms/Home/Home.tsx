@@ -5,6 +5,7 @@ import LangButton from "../../atoms/LangButton/LangButton";
 import styles from "./Home.module.scss";
 import ArrowDown from "../../../assets/home/arrow-down.png";
 import WhatsAppButton from "../../atoms/WhatsAppButton/WhatsAppButton";
+import Footer from "../../molecules/Footer/Footer";
 function Home() {
   const handleScroll = () => {
     const target = document.getElementById("about");
@@ -65,6 +66,7 @@ function Home() {
           <LangButton />
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

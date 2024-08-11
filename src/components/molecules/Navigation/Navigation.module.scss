@@ -5,9 +5,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: $margin-large;
-  padding-right: $margin-large;
-  padding-top: $margin-medium;
+
+  padding: $margin-medium $margin-large;
+  background-color: #d7d7d7;
 
   img.logo {
     width: 20rem !important;
@@ -24,7 +24,7 @@ nav {
     li {
       list-style: none; /* Remove default list style */
       padding: 1rem;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       cursor: pointer;
       position: relative;
       display: flex;
@@ -121,6 +121,7 @@ nav {
     ul,
     .dropdown {
       flex-direction: column;
+      text-align: left;
     }
 
     .nav_cont {
@@ -173,6 +174,8 @@ nav {
           li {
             padding: 1.2rem 1rem;
             border-left: 7px solid #d7d7d7;
+            text-align: left !important;
+            justify-content: flex-start;
 
             &:hover {
               background-color: $secondary-color;

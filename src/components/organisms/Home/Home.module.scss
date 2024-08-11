@@ -23,6 +23,7 @@ main {
       border-radius: 1%;
       width: 100%;
       z-index: 0;
+      background-color: #d7d7d7;
     }
     .arrowButton {
       position: absolute;
@@ -45,7 +46,7 @@ main {
     }
   }
   .home {
-    padding: $margin-medium 0;
+    padding: 0 0;
 
     .aboutSection {
       display: flex;
@@ -73,20 +74,23 @@ main {
           ),
           $background-image;
 
-        min-height: 25vh;
-        background-position: center;
+        min-height: 20.5vh;
         background-size: contain;
         background-repeat: no-repeat;
+        background-color: #d7d7d7;
         margin-bottom: 0;
+        margin: 0;
+        padding: 0;
       }
 
       .arrowButton {
-        bottom: 1.2rem;
+        bottom: 0rem;
         width: 8%;
       }
     }
 
     .langButton {
+      display: none;
       position: absolute;
       bottom: 2rem;
       right: 0%;

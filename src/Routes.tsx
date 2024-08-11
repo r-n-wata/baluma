@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/organisms/Home/Home";
 import House from "./components/molecules/House/House";
+import Contact from "./components/molecules/Contact/Contact";
 import {
   luciasPhotos,
   nievesHouse,
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
   {
     path: "/casas/mini-house",
     element: <House title="Mini House" photos={miniHouse} desc="heeepp" />,
+  },
+
+  {
+    path: "/contact",
+    element: <Contact />,
   },
 ]);
 

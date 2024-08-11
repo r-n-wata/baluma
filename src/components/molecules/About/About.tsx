@@ -5,7 +5,7 @@ import Title from "../../atoms/Title/Title";
 function About() {
   return (
     <div className={styles.about} id="about">
-      <Title title="About" />
+      <Title title="Sobre" />
       <p>
         En Baluma Bacalar encontrarás las mejores opciones para disfrutar la
         maravillosa laguna de Bacalar en pareja o en familia. Te ofrecemos

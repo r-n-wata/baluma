@@ -76,7 +76,6 @@ const Slide = () => {
           <img src={h5} alt="" />
         </SwiperSlide>
       </Swiper>
-      <LineSeparator />
     </div>
   );
 };
