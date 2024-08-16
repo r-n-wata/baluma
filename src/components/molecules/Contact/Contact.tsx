@@ -26,7 +26,7 @@ const Contact = () => {
             <h1 className={styles.contactTitle}>Contact Us</h1>
             <div className={styles.contactLinks}>
               <a
-                href="https://wa.me/1234567890?text=Hello, I would like to chat with you!"
+                href="https://wa.me/+529841820450?text=Hello, I would like to chat with you about the availability of your houses!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.contactLink} ${styles.whatsapp}`}
