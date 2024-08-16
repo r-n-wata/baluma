@@ -33,20 +33,6 @@ const Contact = () => {
               >
                 WhatsApp
               </a>
-              <a
-                href="https://www.instagram.com/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${styles.contactLink} ${styles.instagram}`}
-              >
-                Instagram
-              </a>
-              <Link
-                to="/facebook-profile"
-                className={`${styles.contactLink} ${styles.facebook}`}
-              >
-                Facebook
-              </Link>
             </div>
             <form className={styles.contactForm}>
               <div className={styles.formGroup}>
