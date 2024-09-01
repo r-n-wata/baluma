@@ -8,6 +8,61 @@
       font-size: 1.5rem;
       font-style: italic;
       width: 50%;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .includesCon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0 9rem 0;
+    .includes {
+      text-align: center;
+      width: 40%;
+      h3 {
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+
+        margin: 2rem 0 0 0;
+      }
+      .itemsCon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p {
+          text-align: center;
+
+          font-size: 1rem;
+          letter-spacing: 0.1rem;
+          display: flex;
+
+          span {
+            margin-right: 0.2rem;
+            img {
+              width: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .buttonCon {
+    margin-top: 5rem;
+    .button {
+      color: rgb(61, 61, 61);
+      font-family: "Playwrite CU", cursive;
+      margin-top: 3rem;
+      font-size: 2.5rem;
+      letter-spacing: 0.2em;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      color: rgb(60, 142, 183);
     }
   }
 }
@@ -28,9 +83,42 @@
         font-size: 0.8rem;
       }
     }
+
+    .includesCon {
+      padding: 2rem 0 5rem 0;
+      .includes {
+        width: 80%;
+        h3 {
+          font-size: 1rem;
+          letter-spacing: 0.1rem;
+
+          margin: 2rem 0 0 0;
+        }
+        .itemsCon {
+          p {
+            text-align: center;
+
+            font-size: 0.5rem;
+
+            span {
+              margin-right: 0.2rem;
+              img {
+                width: 0.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .buttonCon {
+      margin-top: 2rem;
+      .button {
+        font-size: 1.2rem;
+      }
+    }
   }
   .galleryCon {
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 0rem;
   }
 }

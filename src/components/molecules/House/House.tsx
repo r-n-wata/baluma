@@ -3,15 +3,20 @@ import LineSeparator from "../../atoms/Line/LineSeparator";
 import Navigation from "../../molecules/Navigation/Navigation";
 import Title from "../../atoms/Title/Title";
 import styles from "./House.module.scss";
+import checkMark from "../../../assets/checkMark.png";
+import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 function House({
   title,
   desc,
   photos,
+  includes,
 }: {
   title: string;
   desc: string;
   photos: string[];
+  includes: Record<string, string | string[]>[];
 }) {
   return (
     <div className={styles.houseCon}>
@@ -24,6 +29,35 @@ function House({
       <div className={styles.galleryCon}>
         <Gallery photos={photos} />
       </div>
+
+      <LineSeparator />
+
+      <section className={styles.includesCon}>
+        {includes.map((include, index) => (
+          <div className={styles.includes} key={index}>
+            <h3>{include.title}</h3>
+            <div className={styles.itemsCon}>
+              {Array.isArray(include.items) &&
+                include.items.map((item, index) => (
+                  <p key={index} className={styles.item}>
+                    <span>
+                      {" "}
+                      <img src={checkMark} alt="check-mark" />
+                    </span>
+                    {item}
+                  </p>
+                ))}
+            </div>
+          </div>
+        ))}
+
+        <div className={styles.buttonCon}>
+          <Link className={styles.button} to="/contact">
+            Book Now
+          </Link>
+        </div>
+      </section>
+      <Footer />
     </div>
   );
 }

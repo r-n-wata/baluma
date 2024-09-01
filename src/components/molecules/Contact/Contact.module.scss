@@ -85,7 +85,7 @@
 .contactLink {
   text-decoration: none;
   font-size: 1.25rem;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border-radius: 5px;
   color: white;
   transition: background-color 0.3s ease;
@@ -126,10 +126,17 @@
 
 .formGroup {
   margin-bottom: 20px;
-
+  textarea {
+    height: 13em;
+  }
   // Adjust margin for smaller screens
   @media (max-width: 768px) {
     margin-bottom: 15px;
+    width: 95%;
+
+    textarea {
+      height: 10rem;
+    }
   }
 }
 

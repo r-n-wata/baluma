@@ -19,3 +19,10 @@ body {
 a {
   cursor: pointer;
 }
+
+h1,
+h2,
+p,
+span {
+  letter-spacing: 0.1rem !important;
+}
