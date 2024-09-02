@@ -28,6 +28,7 @@ function Routes() {
           photos={luciasPhotos}
           desc={houseInfo.LuciasHouse.desc}
           includes={houseInfo.LuciasHouse.includes}
+          overview={houseInfo.LuciasHouse.overview}
         />
       ),
     },
@@ -39,6 +40,7 @@ function Routes() {
           photos={nievesHouse}
           desc={houseInfo.NievesHouse.desc}
           includes={houseInfo.NievesHouse.includes}
+          overview={houseInfo.NievesHouse.overview}
         />
       ),
     },
@@ -50,6 +52,7 @@ function Routes() {
           photos={mariasHouse}
           desc={houseInfo.MariasHouse.desc}
           includes={houseInfo.MariasHouse.includes}
+          overview={houseInfo.MariasHouse.overview}
         />
       ),
     },
@@ -62,6 +65,7 @@ function Routes() {
           photos={casaAzul}
           desc={houseInfo.CasaAzul.desc}
           includes={houseInfo.CasaAzul.includes}
+          overview={houseInfo.CasaAzul.overview}
         />
       ),
     },
@@ -74,6 +78,7 @@ function Routes() {
           photos={casaAzulCorazon}
           desc={houseInfo.CasaAzulCorazon.desc}
           includes={houseInfo.CasaAzulCorazon.includes}
+          overview={houseInfo.CasaAzulCorazon.overview}
         />
       ),
     },
@@ -86,6 +91,7 @@ function Routes() {
           photos={begosHouse}
           desc={houseInfo.BegosHouse.desc}
           includes={houseInfo.BegosHouse.includes}
+          overview={houseInfo.BegosHouse.overview}
         />
       ),
     },
@@ -98,6 +104,7 @@ function Routes() {
           photos={changosHouse}
           desc={houseInfo.ChangosHouse.desc}
           includes={houseInfo.ChangosHouse.includes}
+          overview={houseInfo.ChangosHouse.overview}
         />
       ),
     },
@@ -110,6 +117,7 @@ function Routes() {
           photos={miniHouse}
           desc={houseInfo.EstudioTiliche.desc}
           includes={houseInfo.EstudioTiliche.includes}
+          overview={houseInfo.EstudioTiliche.overview}
         />
       ),
     },

@@ -58,13 +58,14 @@ function Home() {
         <section id="gallery" className={styles.gallerySection}>
           <Slide />
         </section>
-        <div className={styles.langButton}>
+        {/* <div className={styles.langButton}>
           <WhatsAppButton
             phoneNumber="+529831312042"
             message="Hello, I'm interested in your property. Please contact me."
           />
           <LangButton />
         </div>
+        */}
       </div>
       <Footer />
     </main>

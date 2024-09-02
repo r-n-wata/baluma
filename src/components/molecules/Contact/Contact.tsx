@@ -11,7 +11,7 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(""); // To track form submission status
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const payload = {

@@ -77,11 +77,12 @@ function Navigation() {
             </li>
           </ul>
         </li>
-        <li>
+        {/* <li>
           <Link to="/casa4" onClick={toggleMenu}>
             Reviews
           </Link>
         </li>
+        */}
         <li>
           <Link to="/contact" onClick={toggleMenu}>
             Contact

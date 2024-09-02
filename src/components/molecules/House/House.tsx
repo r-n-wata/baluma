@@ -6,17 +6,22 @@ import styles from "./House.module.scss";
 import checkMark from "../../../assets/checkMark.png";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import bathroom from "../../../assets/bathroom.png";
+import bedroom from "../../../assets/bedroom.png";
+import people from "../../../assets/poeple.png";
 
 function House({
   title,
   desc,
   photos,
   includes,
+  overview,
 }: {
   title: string;
   desc: string;
   photos: string[];
   includes: Record<string, string | string[]>[];
+  overview: Record<string, string | number>;
 }) {
   return (
     <div className={styles.houseCon}>
@@ -25,6 +30,20 @@ function House({
       <div className={styles.titleCon}>
         <Title title={title} />
         <p>{desc}</p>
+      </div>
+      <div className={styles.icons}>
+        <div>
+          <img src={bedroom} alt="bedroom" />
+          <span>{overview.bedrooms} Bedrooms</span>
+        </div>
+        <div>
+          <img src={bathroom} alt="bathroom" />
+          <span>{overview.bathrooms} Bathrooms</span>
+        </div>
+        <div>
+          <img src={people} alt="people" />
+          <span>{overview.people} Guests</span>
+        </div>
       </div>
       <div className={styles.galleryCon}>
         <Gallery photos={photos} />

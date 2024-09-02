@@ -2,6 +2,7 @@ interface HouseInfo {
   name: string;
   desc: string;
   includes: Record<string, string | string[]>[];
+  overview: Record<string, string | number>;
 }
 
 export const houseInfo: Record<string, HouseInfo> = {
@@ -37,6 +38,11 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 1,
+      bathrooms: 1,
+      people: 2,
+    },
   },
   NievesHouse: {
     name: "Nieves House",
@@ -70,6 +76,11 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 1,
+      bathrooms: 1,
+      people: 2,
+    },
   },
   MariasHouse: {
     name: "Marias House",
@@ -99,6 +110,11 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 1,
+      bathrooms: 1,
+      people: 2,
+    },
   },
 
   CasaAzul: {
@@ -128,6 +144,11 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 1,
+      bathrooms: 1,
+      people: 2,
+    },
   },
   CasaAzulCorazon: {
     name: "Casa Azul Corazon",
@@ -195,6 +216,11 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 2,
+      bathrooms: 1,
+      people: 7,
+    },
   },
   BegosHouse: {
     name: "Begos House",
@@ -226,6 +252,11 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 2,
+      bathrooms: 1,
+      people: 2,
+    },
   },
   ChangosHouse: {
     name: "Changos House",
@@ -252,6 +283,11 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 1,
+      bathrooms: 1,
+      people: 2,
+    },
   },
   EstudioTiliche: {
     name: "Estudio Tiliche",
@@ -275,5 +311,10 @@ export const houseInfo: Record<string, HouseInfo> = {
         ],
       },
     ],
+    overview: {
+      bedrooms: 1,
+      bathrooms: 1,
+      people: 2,
+    },
   },
 };
