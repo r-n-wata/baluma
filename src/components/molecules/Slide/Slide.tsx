@@ -1,10 +1,7 @@
 // Import Swiper React components
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import h1 from "../../../assets/home/h1.jpg";
-import h2 from "../../../assets/home/h2.jpg";
-import h4 from "../../../assets/home/h4.jpg";
-import h5 from "../../../assets/home/h5.jpg";
+import { homeImgs } from "../../../utils/homeImgs";
 import styles from "./Slide.module.scss";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
@@ -40,18 +37,11 @@ const Slide = () => {
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.swiperLarge}
       >
-        <SwiperSlide>
-          <img src={h1} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={h2} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={h4} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={h5} alt="" />
-        </SwiperSlide>
+        {homeImgs.map((img) => (
+          <SwiperSlide key={img}>
+            <img src={img} alt="gallery-img" />
+          </SwiperSlide>
+        ))}
       </Swiper>
       <Swiper
         onSwiper={(swiper) => handleSwiper(swiper)}
@@ -63,18 +53,11 @@ const Slide = () => {
         modules={[FreeMode, Navigation, Thumbs]}
         className={styles.swiperSmall}
       >
-        <SwiperSlide>
-          <img src={h1} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={h2} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={h4} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={h5} alt="" />
-        </SwiperSlide>
+        {homeImgs.map((img) => (
+          <SwiperSlide key={img}>
+            <img src={img} alt="gallery-img" />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

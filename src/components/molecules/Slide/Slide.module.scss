@@ -1,9 +1,14 @@
 @import "../../../stylesConfig/stylesConfig.scss";
 
+.swiperLarge {
+  display: flex;
+  justify-content: center;
+}
+
 :global {
   .swiper-backface-hidden {
-    width: 80%;
-    height: 40rem;
+    width: 50%;
+    height: auto;
 
     .swiper-button-prev:hover,
     .swiper-button-next:hover {
@@ -13,14 +18,15 @@
   img {
     display: block;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 5%;
   }
   .swiper-free-mode {
-    width: 50%;
-    height: 130px;
+    width: 40%;
+    height: auto;
 
     .swiper-wrapper {
-      width: 70%;
+      width: 100%;
     }
 
     :global {
