@@ -1,7 +1,7 @@
 // Import Swiper React components
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { homeImgs } from "../../../utils/homeImgs";
+import { homeImgs } from "../../../data/homeImgs";
 import styles from "./Slide.module.scss";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";

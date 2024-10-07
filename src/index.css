@@ -22,7 +22,10 @@ a {
 
 h1,
 h2,
+h4,
+h5,
+h6,
 p,
 span {
-  letter-spacing: 0.1rem !important;
+  letter-spacing: 0.2rem !important;
 }

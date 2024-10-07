@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/organisms/Home/Home";
 import House from "./components/molecules/House/House";
 import Contact from "./components/molecules/Contact/Contact";
+import Reviews from "./components/organisms/Reviews/Reviews";
 import {
   luciasPhotos,
   nievesHouse,
@@ -12,7 +13,7 @@ import {
   begosHouse,
   changosHouse,
 } from "./utils/utils";
-import { houseInfo } from "./utils/housesInfo";
+import { houseInfo } from "./data/housesInfo";
 
 function Routes() {
   const router = createBrowserRouter([
@@ -125,6 +126,11 @@ function Routes() {
     {
       path: "/contact",
       element: <Contact />,
+    },
+
+    {
+      path: "/reviews",
+      element: <Reviews />,
     },
   ]);
   return <RouterProvider router={router} />;
