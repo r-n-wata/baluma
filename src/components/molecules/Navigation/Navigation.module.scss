@@ -137,6 +137,7 @@ nav {
     .dropdown {
       flex-direction: column;
       text-align: left;
+      overflow-y: scroll;
     }
 
     .nav_cont {
@@ -173,7 +174,8 @@ nav {
           }
           .homeIconSmall {
             display: block;
-            margin-right: 2rem;
+            margin-right: 0rem;
+            margin-top: -2rem;
             width: 1.5rem;
             height: 1.5rem;
           }
