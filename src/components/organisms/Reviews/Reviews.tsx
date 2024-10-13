@@ -163,7 +163,7 @@ function Reviews() {
                 </div>
               </>
             ) : (
-              <p>No hay opiniones disponibles</p>
+              !loading && <p>No hay opiniones disponibles</p>
             )}
           </div>
           <div></div>
