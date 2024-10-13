@@ -56,8 +56,8 @@ function Reviews() {
       <div className={styles.reviewsConCon}>
         <main className={styles.reviewsCon}>
           <div className={styles.title}>
-            <h2>Testimonial</h2>
-            <p>What members are saying.</p>
+            <h2>RESEÑAS</h2>
+            <p>Lo que dicen las clientes:</p>
           </div>
 
           <button
@@ -69,10 +69,10 @@ function Reviews() {
               border: "1px solid #000",
             }}
           >
-            Add Review
+            Añadir Reseña
           </button>
 
-          {loading && <p>Loading reviews...</p>}
+          {loading && <p>Cargando reseñas...</p>}
           {error && <p>{error}</p>}
 
           <div className={styles.reviews}>
@@ -163,7 +163,7 @@ function Reviews() {
                 </div>
               </>
             ) : (
-              <p>No reviews available.</p>
+              <p>No hay opiniones disponibles</p>
             )}
           </div>
           <div></div>
@@ -197,10 +197,10 @@ function Reviews() {
                   {/* Star Rating */}
                   <div className={styles.starRating}>
                     <StarRating onRate={handleRating} />
-                    <p>Rating: {newReview.rating} stars</p>
+                    <p>Clasification: {newReview.rating} estrella</p>
                   </div>
 
-                  <input type="submit" value="Send" />
+                  <input type="submit" value="Enviar" />
                 </form>
               </section>
             </div>

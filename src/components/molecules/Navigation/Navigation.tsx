@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navigation.module.scss";
 import Logo from "../../../assets/logov1.svg";
+import homeIcon from "../../../assets/home.png";
+import homeIcon2 from "../../../assets/home2.png";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,11 +31,17 @@ function Navigation() {
         <span className={styles.bar}></span>
       </div>
       <ul className={`${isOpen ? styles.open : ""} ${styles.nav_cont}`}>
+        <li>
+          <Link to="/" onClick={toggleMenu}>
+            <img src={homeIcon} alt="Home" className={styles.homeIconLarge} />
+            <img src={homeIcon2} alt="Home" className={styles.homeIconSmall} />
+          </Link>
+        </li>
         <li
           className={isDropdownOpen ? "open casaDropdown" : "casaDropdown"}
           onClick={toggleDropdown}
         >
-          Casas
+          CASAS
           <ul className={styles.dropdown}>
             <li>
               <Link to="/casas/lucias-house" onClick={toggleMenu}>
@@ -51,6 +59,11 @@ function Navigation() {
               </Link>
             </li>
             <li>
+              <Link to="/casas/begos-house" onClick={toggleMenu}>
+                Bego's House
+              </Link>
+            </li>
+            <li>
               <Link to="/casas/casa-azul" onClick={toggleMenu}>
                 Casa Azul
               </Link>
@@ -60,11 +73,7 @@ function Navigation() {
                 Casa Azul Corazon
               </Link>
             </li>
-            <li>
-              <Link to="/casas/begos-house" onClick={toggleMenu}>
-                Begos House
-              </Link>
-            </li>
+
             <li>
               <Link to="/casas/changos-house" onClick={toggleMenu}>
                 Changos House
@@ -72,20 +81,20 @@ function Navigation() {
             </li>
             <li>
               <Link to="/casas/mini-house" onClick={toggleMenu}>
-                Mini House
+                Estudio Tiliche
               </Link>
             </li>
           </ul>
         </li>
         <li>
           <Link to="/reviews" onClick={toggleMenu}>
-            Reviews
+            RESEÑAS
           </Link>
         </li>
 
         <li>
           <Link to="/contact" onClick={toggleMenu}>
-            Contact
+            CONTACTO
           </Link>
         </li>
       </ul>

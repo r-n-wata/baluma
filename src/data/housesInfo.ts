@@ -7,7 +7,7 @@ interface HouseInfo {
 
 export const houseInfo: Record<string, HouseInfo> = {
   LuciasHouse: {
-    name: "Lucias House",
+    name: "Lucia's House",
     desc: "Observa como el sol y la luna se elevan desde la sala de estar, debajo de la palapa privada, frente a la laguna o desde una reposera en el muelle, disfrutando de la naturaleza que nos rodea. La casa Lucia's se encuentra en la misma propiedad que otras tres casas. Ésta es ideal para parejas. Si eres un grupo en busca de más alojamientos, echa un vistazo a Nieve's, Bego's y Maria's. Contamos con Una excelente ubicación en la costera sur, frente a la isla de los pájaros.",
     includes: [
       {
@@ -45,7 +45,7 @@ export const houseInfo: Record<string, HouseInfo> = {
     },
   },
   NievesHouse: {
-    name: "Nieves House",
+    name: "Nieve's House",
     desc: "Éste lugar se encuentra rodeado de naturaleza, desde árboles frutales a plantas aromáticas.La casa Nieve's se encuentra en la misma propiedad que otras tres casas. Ésta es ideal para parejas. Si eres un grupo en busca de más alojamientos, echa un vistazo a Lucia's, Bego's y Maria's. Contamos con una excelente ubicación en la costera sur, frente a la isla de los pájaros.",
     includes: [
       {
@@ -83,7 +83,7 @@ export const houseInfo: Record<string, HouseInfo> = {
     },
   },
   MariasHouse: {
-    name: "Marias House",
+    name: "Maria's House",
     desc: "Éste departamento cuenta con un balcón con vista  a la laguna y al jardín. Relájate con el jacuzzi que se encuentra en la terraza. Los muelles, el jardín, las bicicletas y los kayaks, se comparten con 3 departamentos más: Lucia's, Bego’s y Nieve's. Si vienes con tu grupo de amigos o familiares, no dudes en consultar por todos los espacios. Nuestro jardín te impresionará con plantas locales y aves de todo tipo. Contamos con columpios y hamacas en el agua.Te encantará. ",
     includes: [
       {
@@ -145,9 +145,9 @@ export const houseInfo: Record<string, HouseInfo> = {
       },
     ],
     overview: {
-      bedrooms: 1,
-      bathrooms: 1,
-      people: 2,
+      bedrooms: 3,
+      bathrooms: 2,
+      people: 7,
     },
   },
   CasaAzulCorazon: {
@@ -223,7 +223,7 @@ export const houseInfo: Record<string, HouseInfo> = {
     },
   },
   BegosHouse: {
-    name: "Begos House",
+    name: "Bego's House",
     desc: "Éste departamento cuenta con un balcón frente a la laguna con vista al jardín y jacuzzi en su terraza. Es perfecto para hospedar una pareja o familia de 4 o 5 personas. Los muelles, el jardín, las bicicletas y los kayaks, se comparten con 3 departamentos más: Lucia's, Maria's y Nieve's. Si vienes con tu grupo de amigos o familiares, no dudes en consultar por todos los espacios. Nuestro jardín te impresionará con plantas locales y aves de todo tipo. Contamos con columpios y hamacas en el agua.Te encantará. ",
     includes: [
       {
@@ -255,11 +255,11 @@ export const houseInfo: Record<string, HouseInfo> = {
     overview: {
       bedrooms: 2,
       bathrooms: 1,
-      people: 2,
+      people: 4,
     },
   },
   ChangosHouse: {
-    name: "Changos House",
+    name: "Chango's House",
     desc: "Desconecta de la rutina en nuestra hermosa y acogedora casa y disfruta de la naturaleza en nuestro amplio jardín. La casa, incluído el jardín delantero y trasero, es 100% privada, ideal para parejas o familias pequeñas. Tenemos el agrado de estar a pocos pasos de los mejores lugares y restaurantes de la ciudad y a solo 3 cuadras del acceso público a la laguna. Y si lo que necesitas es trabajar durante tus vacaciones, hay aire acondicionado en toda la casa y tenemos WIFi de alta velocidad.",
     includes: [
       {
@@ -286,7 +286,7 @@ export const houseInfo: Record<string, HouseInfo> = {
     overview: {
       bedrooms: 1,
       bathrooms: 1,
-      people: 2,
+      people: 4,
     },
   },
   EstudioTiliche: {

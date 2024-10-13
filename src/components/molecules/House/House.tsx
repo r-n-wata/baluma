@@ -28,7 +28,7 @@ function House({
       <Navigation />
       <LineSeparator />
       <div className={styles.titleCon}>
-        <Title title={title} />
+        <Title title={title.toUpperCase()} />
         <p>{desc}</p>
       </div>
       <div className={styles.icons}>

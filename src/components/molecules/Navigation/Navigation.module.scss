@@ -39,6 +39,20 @@ nav {
       a {
         text-decoration: none;
         color: $primary-color;
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 2rem;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        .homeIconSmall {
+          display: none;
+          margin-right: 2rem;
+          width: 1.5rem;
+          height: 1.5rem;
+        }
       }
 
       &:hover .dropdown {
@@ -153,6 +167,16 @@ nav {
         width: 100%;
         a {
           color: #fff;
+
+          .homeIconLarge {
+            display: none;
+          }
+          .homeIconSmall {
+            display: block;
+            margin-right: 2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+          }
         }
 
         .dropdown {
