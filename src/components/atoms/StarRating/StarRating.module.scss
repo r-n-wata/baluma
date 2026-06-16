@@ -1,7 +1,8 @@
 .starRating {
   display: flex;
-  gap: 5px;
+  gap: 8px;
   cursor: pointer;
+  justify-content: center;
 }
 
 .star {

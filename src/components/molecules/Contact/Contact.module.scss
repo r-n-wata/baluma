@@ -1,94 +1,84 @@
-// src/Contact.module.scss
+@import "../../../stylesConfig/stylesConfig.scss";
 
 .contactPage {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  margin: 2rem 0;
-
-  // Adjust padding and margin on smaller screens
-  @media (max-width: 768px) {
-    padding: 1rem;
-    margin: 1rem 0;
-  }
+  padding: 0 1.5rem 2rem;
 }
 
 .contactContainer {
-  display: flex;
-  max-width: 1200px;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  width: min(74rem, 100%);
+  margin-top: 2.5rem;
+  background: rgba(255, 253, 249, 0.84);
+  box-shadow: $shadow-soft;
+  border-radius: 2rem;
   overflow: hidden;
-
-  // Stack the columns on smaller screens
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
+  border: 1px solid $border-color;
 }
 
 .photoSection {
-  flex: 2;
-  background-color: #ececec;
-
-  // Adjust flex to be 1:1 with info section on smaller screens
-  @media (max-width: 768px) {
-    flex: none;
-  }
+  min-height: 100%;
+  background: #ececec;
 }
 
 .contactPhoto {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  // Adjust height for smaller screens
-  @media (max-width: 768px) {
-    height: auto;
-  }
 }
 
 .infoSection {
-  flex: 1;
-  padding: 40px;
+  padding: 2.4rem;
+}
 
-  // Adjust padding on smaller screens
-  @media (max-width: 768px) {
-    padding: 20px;
-  }
+.kicker {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(31, 59, 77, 0.08);
+  color: $primary-color;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .contactTitle {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  line-height: 1.04;
+  margin: 0;
+  color: $primary-color;
+}
 
-  // Adjust font size for smaller screens
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
+.contactDescription {
+  margin: 1rem 0 0;
+  color: $muted-text-color;
+  line-height: 1.8;
 }
 
 .contactLinks {
   display: flex;
   gap: 15px;
-  margin-bottom: 40px;
-
-  // Adjust layout for smaller screens
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 10px;
-  }
+  margin: 2rem 0 1.75rem;
 }
 
 .contactLink {
   text-decoration: none;
-  font-size: 1.25rem;
-  padding: 8px 15px;
-  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
   color: white;
-  transition: background-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 
   &.whatsapp {
     background-color: #25d366;
@@ -97,80 +87,102 @@
       background-color: #22b358;
     }
   }
-
-  &.instagram {
-    background-color: #e1306c;
-
-    &:hover {
-      background-color: #c42a5b;
-    }
-  }
-
-  &.facebook {
-    background-color: #3b5998;
-
-    &:hover {
-      background-color: #324a83;
-    }
-  }
 }
 
 .contactForm {
-  margin-top: 20px;
-
-  // Adjust margin for smaller screens
-  @media (max-width: 768px) {
-    margin-top: 10px;
-  }
+  margin-top: 0.5rem;
 }
 
 .formGroup {
-  margin-bottom: 20px;
-  textarea {
-    height: 13em;
-  }
-  // Adjust margin for smaller screens
-  @media (max-width: 768px) {
-    margin-bottom: 15px;
-    width: 95%;
+  margin-bottom: 1rem;
 
-    textarea {
-      height: 10rem;
-    }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $primary-color;
+    font-weight: 600;
+  }
+
+  textarea {
+    min-height: 11rem;
+    resize: vertical;
   }
 }
 
 .formControl {
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(31, 59, 77, 0.16);
   font-size: 1rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 
-  // Adjust padding and font size for smaller screens
-  @media (max-width: 768px) {
-    padding: 8px;
-    font-size: 0.9rem;
+  &:focus {
+    outline: none;
+    border-color: rgba(31, 59, 77, 0.45);
+    box-shadow: 0 0 0 4px rgba(31, 59, 77, 0.08);
   }
 }
 
 .submitButton {
-  background-color: #007bff;
+  background-color: $primary-color;
   color: white;
-  padding: 10px 20px;
+  padding: 0.95rem 1.3rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  font-weight: 700;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
 
-  // Adjust padding and font size for smaller screens
-  @media (max-width: 768px) {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  &:hover:not(:disabled) {
+    background-color: #26495e;
+    transform: translateY(-2px);
   }
 
-  &:hover {
-    background-color: #0056b3;
+  &:disabled {
+    opacity: 0.7;
+    cursor: wait;
+  }
+}
+
+.statusMessage {
+  margin-top: 1rem;
+  color: $primary-color;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contactPage {
+    padding: 0 1rem 1rem;
+  }
+
+  .contactContainer {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+    border-radius: 1.4rem;
+  }
+
+  .photoSection {
+    max-height: 18rem;
+  }
+
+  .infoSection {
+    padding: 1.25rem;
+  }
+
+  .contactLinks {
+    margin: 1.5rem 0;
+  }
+
+  .contactLink {
+    width: 100%;
+    justify-content: center;
+    display: inline-flex;
   }
 }

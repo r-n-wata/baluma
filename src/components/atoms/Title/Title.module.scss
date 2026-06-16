@@ -2,21 +2,26 @@
 
 .titleCon {
   margin-top: $margin-large;
+
   .title {
     display: flex;
     justify-content: center;
-
-    font-size: 3rem;
-    font-family: Helvetica;
+    text-align: center;
+    font-size: clamp(2.2rem, 4vw, 3.7rem);
+    font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
     margin: 0;
-    letter-spacing: 3px !important;
+    letter-spacing: -0.03em !important;
+    color: $primary-color;
+    line-height: 1.05;
   }
 }
 
 @media (max-width: 768px) {
   .titleCon {
+    margin-top: 2.5rem;
+
     .title {
-      font-size: 1.4rem !important;
+      font-size: 2rem !important;
     }
   }
 }

@@ -1,34 +1,101 @@
 @import "../../../stylesConfig/stylesConfig.scss";
-h2 {
-  font-size: 3rem;
-  font-family: Helvetica;
-  margin: 0;
-}
+
 .about {
-  width: 50%;
-  height: 75vh;
+  width: min(72rem, 100%);
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2rem 0;
+
+  .kicker {
+    display: inline-flex;
+    align-self: center;
+    margin-bottom: -2rem;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(31, 59, 77, 0.08);
+    color: $primary-color;
+    font-size: 0.82rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .content {
+    width: min(64rem, 100%);
+    padding: 2rem;
+    border-radius: 2rem;
+    background: rgba(255, 253, 249, 0.72);
+    border: 1px solid $border-color;
+    box-shadow: $shadow-card;
+  }
 
   p {
-    font-size: 1.5rem;
-    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.9;
     text-align: center;
+    color: $muted-text-color;
+  }
+
+  .featureGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .featureCard {
+    padding: 1.2rem;
+    border-radius: 1.25rem;
+    background: $surface-strong;
+    border: 1px solid rgba(31, 59, 77, 0.08);
+
+    span {
+      display: inline-flex;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, $accent-color, #d7b28e);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin: 0;
+      text-align: left;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
   }
 }
 
 @media (max-width: 768px) {
-  h2 {
-    font-size: 1.8rem !important;
-  }
   .about {
-    width: 90%;
-    height: 50vh;
+    width: 100%;
+    min-height: auto;
+    padding: 0;
+
+    .kicker {
+      margin-bottom: -1.4rem;
+      font-size: 0.72rem;
+    }
+
+    .content {
+      padding: 1.25rem;
+      border-radius: 1.4rem;
+    }
 
     p {
-      font-size: 0.8rem;
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+
+    .featureGrid {
+      grid-template-columns: 1fr;
+    }
+
+    .featureCard p {
+      font-size: 0.92rem;
     }
   }
 }

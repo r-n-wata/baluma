@@ -2,190 +2,76 @@
 
 .reviewCard {
   height: 100%;
-  margin: 8px 0;
   width: 100%;
+  min-height: 19rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.35rem;
   position: relative;
-  padding-top: 2rem;
-  border-radius: 4%;
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  border: 1px solid rgba(31, 59, 77, 0.08);
+  box-shadow: $shadow-card;
 
   .blob {
     position: absolute;
-    top: 3rem;
-    left: 2rem;
-    width: 15% !important;
-    height: 15% !important;
+    top: 1.35rem;
+    right: 1.35rem;
+    width: 2.25rem !important;
+    height: 2.25rem !important;
     z-index: 1 !important;
+    opacity: 0.24;
   }
+
   &:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: $shadow-soft;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 15px;
-    border-width: 6px 6px 0;
-    border-style: solid;
-    border-color: $secondary-color transparent transparent transparent;
-    z-index: -1;
-  }
-
-  p {
-    padding: 0 2rem;
-
+  .reviewText {
+    margin: 0;
     font-size: 1rem;
-  }
-
-  img {
-    border-radius: 50%;
-    width: 1.5rem !important;
-    height: 1.5rem !important;
+    line-height: 1.8;
+    color: $text-color;
   }
 
   .reviewInfo {
-    padding: 0 2rem;
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-items: flex-end;
-    margin-left: -4rem;
+    align-items: flex-start;
 
     h4 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 1.35rem;
+      color: $primary-color;
     }
 
-    span {
+    .stars {
+      margin-top: 0.25rem;
       font-size: 1rem;
       color: #ca9a3b;
     }
 
-    span + span {
-      font-size: 1rem;
-    }
-
     .date {
-      color: rgb(61, 61, 61) !important;
-    }
-
-    .rating img {
-      width: 0.7rem !important;
-      height: 0.7rem !important;
-    }
-  }
-}
-
-// Responsive styles
-@media (min-width: 1024px) {
-  .reviewCard {
-    margin: 8px -2rem !important;
-    .reviewBox {
-      padding: 20px;
-      p {
-        font-size: 0.6rem;
-      }
-    }
-
-    .reviewInfoCon {
-      margin: 1.3rem 0 0 0.2rem;
-      img {
-        width: 2rem !important;
-        height: 2rem !important;
-      }
-
-      .reviewInfo {
-        h4 {
-          font-size: 0.8rem;
-        }
-
-        span {
-          font-size: 0.5rem;
-        }
-
-        span + span {
-          font-size: 0.4rem;
-        }
-      }
+      margin-top: 0.45rem;
+      color: $muted-text-color !important;
+      font-size: 0.88rem;
     }
   }
 }
 
 @media (max-width: 768px) {
   .reviewCard {
-    margin: 0px 0rem !important;
-    margin-bottom: 1rem;
-    width: 100%;
-    height: 59%;
-    .reviewBox {
-      height: 100%;
-      padding: 12px;
-      p {
-        font-size: 0.4rem;
-      }
+    min-height: 16rem;
+    padding: 1.25rem;
+
+    .reviewText {
+      font-size: 0.94rem;
+      line-height: 1.7;
     }
 
-    .reviewInfoCon {
-      img {
-        width: 1.2rem !important;
-        height: 1.2rem !important;
-      }
-
-      .reviewInfo {
-        h4 {
-          font-size: 0.5rem;
-        }
-
-        span {
-          font-size: 0.35rem;
-        }
-
-        span + span {
-          font-size: 0.25rem;
-        }
-
-        .date {
-          color: rgb(61, 61, 61) !important;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .reviewCard {
-    margin: 15px 0 !important;
-    padding: 4rem 0.5rem !important;
-    width: 85%;
-    .reviewBox {
-      padding: 10px;
-      p {
-        font-size: 0.35rem !important ;
-      }
-    }
-
-    margin: 1rem 0 0 0.2rem;
-    img {
-      width: 1.5rem !important;
-      height: 1.5rem !important;
-    }
-
-    .reviewInfo {
-      text-align: start;
-      h4 {
-        font-size: 1.2rem;
-      }
-
-      span {
-        font-size: 0.7rem;
-      }
-
-      span + span {
-        font-size: 0.7rem;
-      }
+    .reviewInfo h4 {
+      font-size: 1.15rem;
     }
   }
 }

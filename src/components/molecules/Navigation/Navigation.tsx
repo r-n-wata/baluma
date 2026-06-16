@@ -1,100 +1,171 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Navigation.module.scss";
 import Logo from "../../../assets/logov1.svg";
 import homeIcon from "../../../assets/home.png";
 import homeIcon2 from "../../../assets/home2.png";
 
 function Navigation() {
+  const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const isHousesPage = pathname.startsWith("/casas");
+  const isActiveHouse = (path: string) => pathname === path;
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+    setIsDropdownOpen(false);
   };
 
   return (
     <nav className={styles.nav}>
       <Link to="/">
-        <img src={Logo} alt="Logo" className={styles.logo} />
+        <img src={Logo} alt="Baluma Bacalar" className={styles.logo} />
       </Link>
-      <div
+      <button
+        type="button"
         className={`${styles.menuIcon} ${isOpen ? styles.open : ""}`}
         onClick={toggleMenu}
+        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-expanded={isOpen}
       >
         <span className={styles.bar}></span>
         <span className={styles.bar}></span>
         <span className={styles.bar}></span>
-      </div>
-      <ul className={`${isOpen ? styles.open : ""} ${styles.nav_cont}`}>
+      </button>
+      <div
+        className={`${styles.backdrop} ${isOpen ? styles.visible : ""}`}
+        onClick={closeMenu}
+      />
+      <ul className={`${styles.nav_cont} ${isOpen ? styles.open : ""}`}>
         <li>
-          <Link to="/" onClick={toggleMenu}>
-            <img src={homeIcon} alt="Home" className={styles.homeIconLarge} />
-            <img src={homeIcon2} alt="Home" className={styles.homeIconSmall} />
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={pathname === "/" ? styles.activeLink : ""}
+          >
+            <img src={homeIcon} alt="Inicio" className={styles.homeIconLarge} />
+            <img src={homeIcon2} alt="Inicio" className={styles.homeIconSmall} />
           </Link>
         </li>
         <li
-          className={isDropdownOpen ? "open casaDropdown" : "casaDropdown"}
-          onClick={toggleDropdown}
+          className={`${isDropdownOpen ? styles.dropdownOpen : ""} ${
+            isHousesPage ? styles.activeItem : ""
+          }`}
         >
-          CASAS
-          <ul className={styles.dropdown}>
+          <button
+            type="button"
+            className={`${styles.dropdownTrigger} ${
+              isHousesPage ? styles.activeTrigger : ""
+            }`}
+            onClick={toggleDropdown}
+            aria-expanded={isDropdownOpen}
+          >
+            Casas
+          </button>
+          <ul
+            className={`${styles.dropdown} ${isDropdownOpen ? styles.visible : ""}`}
+          >
             <li>
-              <Link to="/casas/lucias-house" onClick={toggleMenu}>
-                Lucia's House
+              <Link
+                to="/casas/lucias-house"
+                onClick={closeMenu}
+                className={isActiveHouse("/casas/lucias-house") ? styles.activeLink : ""}
+              >
+                Lucia&apos;s House
               </Link>
             </li>
             <li>
-              <Link to="/casas/nieves-house" onClick={toggleMenu}>
-                Nieve's house
+              <Link
+                to="/casas/nieves-house"
+                onClick={closeMenu}
+                className={isActiveHouse("/casas/nieves-house") ? styles.activeLink : ""}
+              >
+                Nieve&apos;s House
               </Link>
             </li>
             <li>
-              <Link to="/casas/marias-house" onClick={toggleMenu}>
-                Maria's loft
+              <Link
+                to="/casas/marias-house"
+                onClick={closeMenu}
+                className={isActiveHouse("/casas/marias-house") ? styles.activeLink : ""}
+              >
+                Maria&apos;s Loft
               </Link>
             </li>
             <li>
-              <Link to="/casas/begos-house" onClick={toggleMenu}>
-                Bego's House
+              <Link
+                to="/casas/begos-house"
+                onClick={closeMenu}
+                className={isActiveHouse("/casas/begos-house") ? styles.activeLink : ""}
+              >
+                Bego&apos;s House
               </Link>
             </li>
             <li>
-              <Link to="/casas/casa-azul" onClick={toggleMenu}>
+              <Link
+                to="/casas/casa-azul"
+                onClick={closeMenu}
+                className={isActiveHouse("/casas/casa-azul") ? styles.activeLink : ""}
+              >
                 Casa Azul
               </Link>
             </li>
             <li>
-              <Link to="/casas/casa-azul-corazon" onClick={toggleMenu}>
+              <Link
+                to="/casas/casa-azul-corazon"
+                onClick={closeMenu}
+                className={
+                  isActiveHouse("/casas/casa-azul-corazon") ? styles.activeLink : ""
+                }
+              >
                 Casa Azul Corazon
               </Link>
             </li>
-
             <li>
-              <Link to="/casas/changos-house" onClick={toggleMenu}>
+              <Link
+                to="/casas/changos-house"
+                onClick={closeMenu}
+                className={isActiveHouse("/casas/changos-house") ? styles.activeLink : ""}
+              >
                 Changos House
               </Link>
             </li>
             <li>
-              <Link to="/casas/mini-house" onClick={toggleMenu}>
+              <Link
+                to="/casas/mini-house"
+                onClick={closeMenu}
+                className={isActiveHouse("/casas/mini-house") ? styles.activeLink : ""}
+              >
                 Estudio Tiliche
               </Link>
             </li>
           </ul>
         </li>
         <li>
-          <Link to="/reviews" onClick={toggleMenu}>
-            RESEÑAS
+          <Link
+            to="/reviews"
+            onClick={closeMenu}
+            className={pathname === "/reviews" ? styles.activeLink : ""}
+          >
+            Reseñas
           </Link>
         </li>
-
         <li>
-          <Link to="/contact" onClick={toggleMenu}>
-            CONTACTO
+          <Link
+            to="/contact"
+            onClick={closeMenu}
+            className={pathname === "/contact" ? styles.activeLink : ""}
+          >
+            Contacto
           </Link>
         </li>
       </ul>

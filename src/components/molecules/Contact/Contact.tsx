@@ -9,10 +9,13 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState(""); // To track form submission status
+  const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setStatus("");
 
     const payload = {
       from: email,
@@ -33,73 +36,93 @@ const Contact = () => {
       );
 
       if (response.ok) {
-        setStatus("Message sent successfully!");
+        setStatus("Tu mensaje se envió correctamente.");
+        setName("");
+        setEmail("");
+        setMessage("");
       } else {
-        setStatus("Failed to send message.");
+        setStatus("No pudimos enviar tu mensaje. Inténtalo de nuevo.");
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      setStatus("Error sending message.");
+      setStatus("Ocurrió un error al enviar el mensaje.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
       <Navigation />
-      <LineSeparator />
       <div className={styles.contactPage}>
+        <LineSeparator />
         <div className={styles.contactContainer}>
           <div className={styles.photoSection}>
             <img
               src={background}
-              alt="Contact"
+              alt="Vista de Bacalar"
               className={styles.contactPhoto}
             />
           </div>
           <div className={styles.infoSection}>
-            <h1 className={styles.contactTitle}>Contact Us</h1>
+            <span className={styles.kicker}>Hablemos</span>
+            <h1 className={styles.contactTitle}>Reserva con más claridad y menos fricción</h1>
+            <p className={styles.contactDescription}>
+              Escríbenos para consultar disponibilidad, resolver dudas o
+              encontrar la casa ideal para tu viaje.
+            </p>
             <div className={styles.contactLinks}>
               <a
-                href="https://wa.me/+529841820450?text=Hello, I would like to chat with you about the availability of your houses!"
+                href="https://wa.me/+529841820450?text=Hola, me gustaría conocer la disponibilidad de sus casas en Bacalar."
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.contactLink} ${styles.whatsapp}`}
               >
-                WhatsApp
+                WhatsApp directo
               </a>
             </div>
             <form className={styles.contactForm} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Nombre</label>
                 <input
                   type="text"
                   id="name"
                   className={styles.formControl}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  placeholder="Tu nombre"
+                  required
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Correo</label>
                 <input
                   type="email"
                   id="email"
                   className={styles.formControl}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="tu@email.com"
+                  required
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">Mensaje</label>
                 <textarea
                   id="message"
                   className={styles.formControl}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Cuéntanos fechas, número de huéspedes o cualquier detalle útil."
+                  required
                 ></textarea>
               </div>
-              <button type="submit" className={styles.submitButton}>
-                Send Message
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
               </button>
             </form>
             {status && <p className={styles.statusMessage}>{status}</p>}

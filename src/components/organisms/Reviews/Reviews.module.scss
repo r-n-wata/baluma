@@ -1,289 +1,243 @@
 @import "../../../stylesConfig/stylesConfig.scss";
-$background-image: url("../../../assets/background.jpg");
-$gradient-start: rgba(45, 36, 34, 0.2);
-$gradient-end: rgba(77, 67, 59, 0.2);
 
 .reviewsConCon {
   display: flex;
-  padding: 0;
-  height: 90vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1.5rem;
+}
 
-  .reviewsCon {
+.reviewsCon {
+  width: min(78rem, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 0;
+  position: relative;
+
+  .title {
+    text-align: center;
+    max-width: 40rem;
+    margin-bottom: 1rem;
+
+    span {
+      display: inline-block;
+      margin-bottom: 0.9rem;
+      color: $accent-color;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      font-size: clamp(2.1rem, 4vw, 3.6rem);
+      color: $primary-color;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+
+    p {
+      margin: 1rem 0 0;
+      color: $muted-text-color;
+      line-height: 1.7;
+    }
+  }
+
+  .feedback {
+    color: $muted-text-color;
+  }
+
+  .reviews {
     width: 100%;
+    position: relative;
+    padding: 2rem 0 1rem;
+  }
+
+  .addReviewBtn {
+    color: $primary-color;
+    margin-top: 0.4rem;
+    font-size: 0.98rem;
+    cursor: pointer;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(31, 59, 77, 0.16);
+    background: rgba(255, 253, 249, 0.78);
+    padding: 0.85rem 1.2rem;
+    border-radius: 999px;
+    transition:
+      transform 0.25s ease,
+      background-color 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: #fff;
+    }
+  }
+
+  .swiperRoot {
+    width: 100%;
+    padding: 1rem 0 3rem;
+  }
+
+  .swiperSlide {
+    height: auto;
+    opacity: 0.72;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .activeSlide {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+
+  :global {
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: $primary-color;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: rgba(31, 59, 77, 0.24);
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $primary-color;
+    }
+  }
+
+  .reviews img {
+    position: absolute;
+    z-index: -1;
+    width: 8rem;
+    opacity: 0.28;
+  }
+
+  .reviews .topQuote {
+    top: 0.25rem;
+    left: -0.5rem;
+  }
+
+  .reviews .bottomQuote {
+    bottom: 0.75rem;
+    right: -0.5rem;
+    transform: rotate(180deg);
+  }
+
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 20, 28, 0.58);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0 0 0;
-    position: relative;
+    z-index: 100;
+    padding: 1rem;
 
-    .title {
-      margin-bottom: 2rem;
-    }
+    .addReview {
+      background: #fffdf9;
+      padding: 2rem;
+      border-radius: 1.4rem;
+      width: min(30rem, 100%);
+      box-shadow: $shadow-soft;
+      position: relative;
+      text-align: center;
 
-    .reviews {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      padding: 3rem 0;
-    }
+      h3 {
+        margin: 0 0 1rem;
+        color: $primary-color;
+        font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+        font-size: 2rem;
+      }
 
-    .reviewsMobile {
-      display: none;
-    }
-    .addReviewBtn {
-      color: rgb(61, 61, 61);
-      font-family: "Playwrite CU", cursive;
-      margin-top: 0rem;
-      font-size: 1rem;
-      cursor: pointer;
-      letter-spacing: 0.2em;
-      list-style: none;
-      text-decoration: none;
-      text-decoration: underline;
-      border: none !important;
-      background: none !important;
-    }
-    .addReviewBtn:hover {
-      color: rgb(60, 142, 183) !important;
-    }
-    :global {
-      .swiper-slide {
-        padding: 0 !important;
+      form {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease;
-        opacity: 0.7;
-        z-index: 1;
-        height: 80% !important;
-        width: 450px !important;
-      }
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
 
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #333;
-      }
-
-      .swiper-pagination-bullet {
-        background-color: #ccc;
-      }
-
-      .swiper-pagination-bullet-active {
-        background-color: #333;
-      }
-
-      .swiper-backface-hidden {
-        width: 80%;
-        height: 100% !important;
-      }
-    }
-
-    .reviews img {
-      position: absolute;
-      z-index: -1;
-      width: 10rem;
-    }
-
-    .reviews .topQuote {
-      position: absolute;
-      top: 8rem;
-      left: 2rem;
-    }
-
-    .reviews .bottomQuote {
-      position: absolute;
-      bottom: 5rem;
-      right: 2rem;
-      transform: rotate(180deg);
-    }
-
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.7); /* Modal background dim */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 100;
-
-      .addReview {
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        width: 400px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        position: relative;
-        text-align: center;
-        animation: fadeIn 0.3s ease;
-
-        form {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          padding: 2rem 0;
-
-          input[type="text"],
-          input[type="email"],
-          textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-          }
-
-          textarea {
-            height: 100px;
-          }
-
-          input[type="submit"] {
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-
-            &:hover {
-              background-color: #0056b3;
-            }
-          }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+          width: 100%;
+          padding: 0.95rem 1rem;
+          border: 1px solid rgba(31, 59, 77, 0.16);
+          border-radius: 1rem;
+          font-size: 1rem;
         }
 
-        .closeModal {
-          position: absolute;
-          top: 10px;
-          right: 1.3rem;
-          background: transparent;
+        textarea {
+          min-height: 7rem;
+          resize: vertical;
+        }
+
+        input[type="submit"] {
+          padding: 0.95rem 1rem;
+          background-color: $primary-color;
+          color: white;
           border: none;
-          font-size: 1.5rem;
+          border-radius: 999px;
           cursor: pointer;
+          font-size: 1rem;
+          font-weight: 700;
 
-          &:hover {
-            color: #007bff;
+          &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
           }
         }
+      }
+
+      .closeModal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: transparent;
+        border: 1px solid rgba(31, 59, 77, 0.14);
+        border-radius: 999px;
+        font-size: 1rem;
+        cursor: pointer;
+        color: $primary-color;
       }
     }
   }
 
-  // Media query for mobile screens
-  @media (max-width: 768px) {
-    flex-direction: column;
+  .starRating p {
+    margin: 0.6rem 0 0;
+    color: $muted-text-color;
+  }
+}
 
-    .background {
-      width: 100%;
-      height: 50vh;
+@media (max-width: 768px) {
+  .reviewsConCon {
+    padding: 0 1rem;
+  }
 
-      .button {
-        font-size: 1.5rem;
-        padding: 8px 16px;
-      }
+  .reviewsCon {
+    padding-top: 1.5rem;
+
+    .reviews {
+      padding: 1.5rem 0 0.5rem;
     }
 
-    .swiperContainer {
-      overflow-y: scroll;
+    .reviews .topQuote {
+      left: 0;
     }
 
-    .addReviewBtn {
-      font-size: 0.8rem !important;
-      margin-top: 0rem !important;
+    .reviews .bottomQuote {
+      right: 0;
     }
 
-    .reviewsMobile {
-      display: flex !important;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 2rem;
-      overflow-y: scroll;
-    }
+    .modal .addReview {
+      padding: 1.25rem;
 
-    :global {
-      .swiper-slide {
-        display: none !important;
-        padding: 0 !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.3s ease;
-        opacity: 0.7;
-        z-index: 1;
-        height: 80% !important;
-        width: 450px !important;
-      }
-
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: #333;
-      }
-
-      .swiper-pagination-bullet {
-        background-color: #ccc;
-      }
-
-      .swiper-pagination-bullet-active {
-        background-color: #333;
-      }
-
-      .swiper-backface-hidden {
-        display: none !important;
-        width: 100%;
-        height: 100% !important;
-      }
-    }
-
-    .reviewsCon {
-      width: 100%;
-      padding: 0;
-
-      .title {
-        margin-top: 4rem;
-        text-align: center;
-        h2 {
-          font-size: 1.5rem !important;
-        }
-        font-size: 0.8rem;
-        margin-bottom: 0rem;
-      }
-
-      .reviews {
-        height: 75vh;
-        padding: 0 0 2rem 0;
-      }
-
-      .cardsCon {
-        gap: 1rem;
-        padding-top: 1rem;
-      }
-
-      .reviews img {
-        width: 8rem;
-      }
-
-      .reviews .topQuote {
-        top: 5rem;
-        left: 1rem;
-      }
-
-      .reviews .bottomQuote {
-        bottom: 2rem;
-        right: 1rem;
-      }
-    }
-
-    .modal {
-      .addReview {
-        width: 90%;
-        padding: 1.5rem;
+      h3 {
+        font-size: 1.6rem;
       }
     }
   }

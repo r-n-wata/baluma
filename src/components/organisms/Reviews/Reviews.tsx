@@ -3,8 +3,7 @@ import ReviewCard from "../../atoms/ReviewCard/ReviewCard";
 import Quote from "../../../assets/blockquote.svg";
 import styles from "./Reviews.module.scss";
 import Navigation from "../../molecules/Navigation/Navigation";
-import background1 from "../../../assets/background.jpg";
-import useReviews from "../../../hooks/useReviews"; // Custom hook for reviews
+import useReviews from "../../../hooks/useReviews";
 import StarRating from "../../atoms/StarRating/StarRating";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -16,9 +15,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Footer from "../../molecules/Footer/Footer";
+import LineSeparator from "../../atoms/Line/LineSeparator";
 
 function Reviews() {
-  const { reviews, loading, error, addReview, fetchReviews } = useReviews(); // Use the custom hook
+  const { reviews, loading, error, addReview, fetchReviews } = useReviews();
   const [openModal, setOpenModal] = useState(false);
   const [newReview, setNewReview] = useState({
     clientName: "",
@@ -27,12 +27,15 @@ function Reviews() {
     rating: 0,
   });
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const toggleModal = () => {
-    setOpenModal(!openModal);
+    setOpenModal((prev) => !prev);
   };
 
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setNewReview({ ...newReview, [name]: value });
   };
@@ -41,173 +44,158 @@ function Reviews() {
     setNewReview({ ...newReview, rating });
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await addReview(newReview); // Add review via Zustand store
-    setNewReview({ clientName: "", email: "", review: "", rating: 0 }); // Clear form
-    setOpenModal(false); // Close modal
-    fetchReviews(); // Fetch updated reviews
+    setIsSubmitting(true);
+    await addReview(newReview);
+    setNewReview({ clientName: "", email: "", review: "", rating: 0 });
+    setOpenModal(false);
+    fetchReviews();
+    setIsSubmitting(false);
   };
 
-  console.log("reviews", reviews);
+  const colors = ["#ecf4f0", "#f6efe6", "#ebf3f8", "#f3ede7"];
+
   return (
     <div>
       <Navigation />
       <div className={styles.reviewsConCon}>
+        <LineSeparator />
         <main className={styles.reviewsCon}>
           <div className={styles.title}>
-            <h2>RESEÑAS</h2>
-            <p>Lo que dicen las clientes:</p>
+            <span>Experiencias reales</span>
+            <h2>Reseñas de huéspedes</h2>
+            <p>Lo que más valoran quienes ya se hospedaron con nosotros.</p>
           </div>
 
-          <button
-            onClick={toggleModal}
-            className={styles.addReviewBtn}
-            style={{
-              backgroundColor: "#f8f8f8",
-              color: "#000",
-              border: "1px solid #000",
-            }}
-          >
-            Añadir Reseña
+          <button onClick={toggleModal} className={styles.addReviewBtn}>
+            Añadir reseña
           </button>
 
-          {loading && <p>Cargando reseñas...</p>}
-          {error && <p>{error}</p>}
+          {loading && <p className={styles.feedback}>Cargando reseñas...</p>}
+          {error && <p className={styles.feedback}>{error}</p>}
 
           <div className={styles.reviews}>
             <blockquote>
-              <img className={styles.topQuote} src={Quote} alt="quote" />
-              <img className={styles.bottomQuote} src={Quote} alt="quote" />
+              <img className={styles.topQuote} src={Quote} alt="" />
+              <img className={styles.bottomQuote} src={Quote} alt="" />
             </blockquote>
 
             {reviews && reviews.length > 0 ? (
-              <>
-                {" "}
-                <Swiper
-                  modules={[SwiperNavigation, Pagination, Autoplay]}
-                  spaceBetween={2}
-                  slidesPerView={4}
-                  breakpoints={{
-                    320: {
-                      slidesPerView: 1, // 1 slide for screens smaller than 480px
-                      spaceBetween: 10,
-                    },
-                    480: {
-                      slidesPerView: 1, // 1 slide for screens between 480px and 768px
-                      spaceBetween: 15,
-                    },
-                    768: {
-                      slidesPerView: 2, // 2 slides for screens between 768px and 1024px
-                      spaceBetween: 20,
-                    },
-                    1024: {
-                      slidesPerView: 3, // 3 slides for screens larger than 1024px
-                      spaceBetween: 30,
-                    },
-                  }}
-                  centeredSlides={true}
-                  navigation
-                  pagination={{ clickable: true }}
-                  autoplay={{ delay: 3000, disableOnInteraction: false }}
-                  onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-                >
-                  {reviews.map((obj, index) => {
-                    const colors = ["#A7E4DE", "#89E1BC", "#83C27C", "#D8E07A"];
-                    const date = new Date(obj.createdAt);
+              <Swiper
+                modules={[SwiperNavigation, Pagination, Autoplay]}
+                spaceBetween={18}
+                slidesPerView={4}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  640: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 14,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 18,
+                  },
+                  1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                  },
+                }}
+                centeredSlides={true}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 3800, disableOnInteraction: false }}
+                onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                className={styles.swiperRoot}
+              >
+                {reviews.map((obj, index) => {
+                  const date = new Date(obj.createdAt);
+                  const formattedDate = date.toLocaleDateString("es-MX", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  });
 
-                    const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-                    return (
-                      <SwiperSlide
+                  return (
+                    <SwiperSlide
+                      key={index}
+                      className={`${styles.swiperSlide} ${
+                        index === activeIndex ? styles.activeSlide : ""
+                      }`}
+                    >
+                      <ReviewCard
                         key={index}
-                        className={`${styles.swiperSlide} ${
-                          index === activeIndex ? styles.activeSlide : ""
-                        }`}
-                      >
-                        <ReviewCard
-                          key={index}
-                          review={obj.review}
-                          name={obj.clientName}
-                          rating={obj.rating}
-                          date={formattedDate}
-                          colors={colors[index % colors.length]}
-                        />
-                      </SwiperSlide>
-                    );
-                  })}
-                </Swiper>
-                <div className={styles.swiperContainer}>
-                  <div className={styles.reviewsMobile}>
-                    {reviews.map((obj, index) => {
-                      const colors = [
-                        "#A7E4DE",
-                        "#89E1BC",
-                        "#83C27C",
-                        "#D8E07A",
-                      ];
-                      const date = new Date(obj.createdAt);
-
-                      const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
-                      return (
-                        <ReviewCard
-                          key={index}
-                          review={obj.review}
-                          name={obj.clientName}
-                          rating={obj.rating}
-                          date={formattedDate}
-                          colors={colors[index % colors.length]}
-                        />
-                      );
-                    })}
-                  </div>
-                </div>
-              </>
+                        review={obj.review}
+                        name={obj.clientName}
+                        rating={obj.rating}
+                        date={formattedDate}
+                        colors={colors[index % colors.length]}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
             ) : (
-              !loading && <p>No hay opiniones disponibles</p>
+              !loading && (
+                <p className={styles.feedback}>Aún no hay opiniones disponibles.</p>
+              )
             )}
           </div>
-          <div></div>
 
           {openModal && (
             <div className={styles.modal}>
               <section className={styles.addReview}>
-                {" "}
-                <div className={styles.closeModal} onClick={toggleModal}>
-                  {" "}
-                  X{" "}
-                </div>
+                <button
+                  type="button"
+                  className={styles.closeModal}
+                  onClick={toggleModal}
+                  aria-label="Cerrar modal"
+                >
+                  X
+                </button>
+                <h3>Comparte tu experiencia</h3>
                 <form onSubmit={handleSubmit}>
                   <input
                     type="text"
                     name="clientName"
-                    placeholder="Name"
+                    placeholder="Nombre"
                     value={newReview.clientName}
                     onChange={handleInputChange}
                     required
                   />
-
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Correo electrónico"
+                    value={newReview.email}
+                    onChange={handleInputChange}
+                    required
+                  />
                   <textarea
                     name="review"
-                    placeholder="Review"
+                    placeholder="Cuéntanos cómo fue tu estancia"
                     value={newReview.review}
                     onChange={handleInputChange}
                     required
                   />
-
-                  {/* Star Rating */}
                   <div className={styles.starRating}>
                     <StarRating onRate={handleRating} />
-                    <p>Clasification: {newReview.rating} estrella</p>
+                    <p>Calificación: {newReview.rating} estrella(s)</p>
                   </div>
-
-                  <input type="submit" value="Enviar" />
+                  <input
+                    type="submit"
+                    value={isSubmitting ? "Enviando..." : "Enviar"}
+                    disabled={isSubmitting || newReview.rating === 0}
+                  />
                 </form>
               </section>
             </div>
           )}
         </main>
       </div>
-
       <Footer />
     </div>
   );

@@ -4,20 +4,27 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 4.5rem;
+
   .line {
-    width: 10%;
-    height: 0.3rem;
-    background-color: $primary-color;
+    width: min(7rem, 22%);
+    height: 0.25rem;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      rgba(31, 59, 77, 0.12),
+      $accent-color,
+      rgba(31, 59, 77, 0.12)
+    );
   }
 }
 
 @media (max-width: 768px) {
   .lineContainer {
-    margin-top: 5rem;
+    margin-top: 3rem;
 
     .line {
-      width: 10%;
+      width: min(5rem, 24%);
       height: 0.2rem;
     }
   }

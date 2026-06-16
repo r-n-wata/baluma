@@ -3,12 +3,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  gap: 10px;
-  width: 75%;
+  gap: 14px;
+  width: min(78rem, 100%);
 }
 
 .photo {
   overflow: hidden;
+  border-radius: 1.25rem;
+  box-shadow: 0 14px 32px rgba(25, 42, 53, 0.08);
 }
 
 .vertical {
@@ -18,9 +20,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.04);
     }
   }
 }
@@ -29,11 +32,11 @@
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.04);
     }
   }
 }
@@ -41,6 +44,7 @@
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-    width: 80%;
+    width: 100%;
+    gap: 10px;
   }
 }

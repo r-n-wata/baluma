@@ -1,5 +1,13 @@
-$primary-color: #3b3b3c;
-$secondary-color: #6c757d;
+$primary-color: #1f3b4d;
+$secondary-color: #5f7c8f;
+$accent-color: #b37a4c;
+$surface-color: #f8f4ee;
+$surface-strong: #fffdf9;
+$text-color: #20313d;
+$muted-text-color: #667784;
+$border-color: rgba(31, 59, 77, 0.12);
+$shadow-soft: 0 24px 60px rgba(25, 42, 53, 0.12);
+$shadow-card: 0 14px 32px rgba(25, 42, 53, 0.08);
 $success-color: #28a745;
 $danger-color: #dc3545;
 $warning-color: #ffc107;
@@ -28,3 +36,6 @@ $font-size-small: 10px;
 $font-size-medium: 15px;
 $font-size-large: 20px;
 $font-size-extra-large: 25px;
+
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
