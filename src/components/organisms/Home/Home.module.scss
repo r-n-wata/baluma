@@ -1,6 +1,6 @@
 @import "../../../stylesConfig/stylesConfig.scss";
 
-$background-image: url("../../../assets/home/h7.jpeg");
+$background-image: url("../../../assets/background.jpg");
 $gradient-start: rgba(13, 35, 46, 0.5);
 
 main {
@@ -92,27 +92,53 @@ main {
 
 @media (max-width: 768px) {
   main {
+    .home {
+      .aboutSection {
+        margin-top: 3rem;
+      }
+
+      .gallerySection {
+        margin-top: 2.5rem;
+      }
+    }
+
     .homeSection {
       padding: 1rem 1rem 0;
 
       .top {
-        min-height: 65vh;
+        min-height: 52vh;
         border-radius: 1.5rem;
         margin-bottom: 2rem;
-        padding-top: 0.5rem;
+        align-items: flex-start;
+        background-position: center center;
+        padding: 1rem;
       }
 
       .heroContent {
+        width: min(20rem, 78%);
         border-radius: 1.25rem;
+        background: rgba(16, 37, 48, 0.3);
         padding: 0.85rem 1rem;
       }
 
-      p {
-        max-width: 22rem;
-        font-size: 0.92rem;
-        line-height: 1.55;
+      h1 {
+        font-size: clamp(1.45rem, 7vw, 1.95rem);
       }
 
+      p {
+        max-width: 18rem;
+        font-size: 0.82rem;
+        line-height: 1.4;
+      }
+
+      .highlights {
+        margin-top: 1rem;
+
+        span {
+          font-size: 0.74rem;
+          padding: 0.45rem 0.65rem;
+        }
+      }
     }
   }
 }
