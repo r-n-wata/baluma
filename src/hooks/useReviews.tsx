@@ -1,12 +1,14 @@
 import useReviewsStore from "../store/reviewsStore";
 import { useEffect } from "react";
 
+type Review = Record<string, unknown>;
+
 type ReviewsStore = {
-  reviews: any[];
+  reviews: Review[];
   loading: boolean;
   error: string | null;
-  fetchReviews: () => void;
-  addReview: (review: any) => void;
+  fetchReviews: () => Promise<void>;
+  addReview: (review: Review) => Promise<void>;
 };
 
 // Custom hook for fetching and interacting with reviews

@@ -15,21 +15,20 @@ export const init = (overrideLang?: string): Promise<TFunction> => {
     .use(initReactI18next)
     .init({
       detection: {
-        caches: [],
-        order: ["navigator"],
+        caches: ["localStorage", "cookie"],
+        order: ["localStorage", "cookie", "navigator"],
       },
-      fallbackLng: overrideLang || "en",
+      fallbackLng: overrideLang || "es",
       interpolation: {
         escapeValue: false,
       },
-      keySeparator: false,
       lng: overrideLang,
-      nsSeparator: false,
       react: {
         bindI18nStore: "added",
         transKeepBasicHtmlNodesFor: ["br", "strong", "i"],
       },
       resources,
+      supportedLngs: ["en", "es"],
     });
 };
 

@@ -1,14 +1,16 @@
 import { create } from "zustand";
 
+type Review = Record<string, unknown>;
+
 type ReviewsStore = {
-  reviews: any[];
+  reviews: Review[];
   loading: boolean;
   error: string | null;
-  fetchReviews: () => void;
-  addReview: (review: any) => void;
+  fetchReviews: () => Promise<void>;
+  addReview: (review: Review) => Promise<void>;
 };
 
-const useReviewsStore = create((set) => ({
+const useReviewsStore = create<ReviewsStore>((set) => ({
   reviews: [],
   loading: false,
   error: null,
@@ -20,7 +22,7 @@ const useReviewsStore = create((set) => ({
       const response = await fetch(
         "https://complete-nedi-freelancing123-168024ba.koyeb.app/api/reviews"
       );
-      const data = await response.json();
+      const data: Review[] = await response.json();
       set({ reviews: data, loading: false });
     } catch (error) {
       set({ error: "Failed to fetch reviews", loading: false });
@@ -28,7 +30,7 @@ const useReviewsStore = create((set) => ({
   },
 
   // Add a new review
-  addReview: async (newReview: any) => {
+  addReview: async (newReview: Review) => {
     try {
       const response = await fetch(
         "https://complete-nedi-freelancing123-168024ba.koyeb.app/api/reviews",
@@ -38,8 +40,8 @@ const useReviewsStore = create((set) => ({
           body: JSON.stringify(newReview),
         }
       );
-      const addedReview = await response.json();
-      set((state: any) => ({ reviews: [...state.reviews, addedReview] }));
+      const addedReview: Review = await response.json();
+      set((state) => ({ reviews: [...state.reviews, addedReview] }));
     } catch (error) {
       set({ error: "Failed to add review" });
     }

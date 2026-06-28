@@ -3,12 +3,11 @@ import About from "../../molecules/About/About";
 import Slide from "../../molecules/Slide/Slide";
 import styles from "./Home.module.scss";
 import Footer from "../../molecules/Footer/Footer";
+import { useTranslation } from "react-i18next";
 
 function Home() {
-  const highlights = [
-    "Hospedajes junto a la laguna",
-    "Espacios con calma",
-  ];
+  const { t } = useTranslation();
+  const highlights = t("home.highlights", { returnObjects: true }) as string[];
 
   return (
     <main>
@@ -17,8 +16,8 @@ function Home() {
         <section className={styles.homeSection}>
           <div className={styles.top}>
             <div className={styles.heroContent}>
-              <h1>Estancias serenas para descubrir Bacalar con calma.</h1>
-              <p>Casas con carácter cerca de la laguna.</p>
+              <h1>{t("home.title")}</h1>
+              <p>{t("home.subtitle")}</p>
               <div className={styles.highlights}>
                 {highlights.map((highlight) => (
                   <span key={highlight}>{highlight}</span>

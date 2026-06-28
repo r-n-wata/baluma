@@ -1,22 +1,22 @@
 import { homeImgs } from "../../../data/homeImgs";
 import styles from "./Slide.module.scss";
+import { useTranslation } from "react-i18next";
 
 const Slide = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.slide}>
       <div className={styles.header}>
-        <span>Explora Baluma</span>
-        <h2>Una vista más cuidada de cada estancia</h2>
-        <p>
-          Recorre los espacios, materiales y rincones que hacen distinta cada
-          propiedad antes de reservar.
-        </p>
+        <span>{t("slide.kicker")}</span>
+        <h2>{t("slide.title")}</h2>
+        <p>{t("slide.description")}</p>
       </div>
 
-      <div className={styles.rail} aria-label="Galería de propiedades">
+      <div className={styles.rail} aria-label={t("slide.ariaLabel")}>
         {homeImgs.map((img, index) => (
           <article key={img} className={styles.card}>
-            <img src={img} alt={`Vista de propiedad ${index + 1}`} />
+            <img src={img} alt={t("common.galleryPhotoAlt", { index: index + 1 })} />
           </article>
         ))}
       </div>

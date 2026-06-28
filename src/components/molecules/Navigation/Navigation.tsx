@@ -4,8 +4,11 @@ import styles from "./Navigation.module.scss";
 import Logo from "../../../assets/logov1.svg";
 import homeIcon from "../../../assets/home.png";
 import homeIcon2 from "../../../assets/home2.png";
+import { useTranslation } from "react-i18next";
+import LangButton from "../../atoms/LangButton/LangButton";
 
 function Navigation() {
+  const { t } = useTranslation();
   const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,7 +37,7 @@ function Navigation() {
         type="button"
         className={`${styles.menuIcon} ${isOpen ? styles.open : ""}`}
         onClick={toggleMenu}
-        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-label={isOpen ? t("nav.closeMenu") : t("nav.openMenu")}
         aria-expanded={isOpen}
       >
         <span className={styles.bar}></span>
@@ -52,8 +55,8 @@ function Navigation() {
             onClick={closeMenu}
             className={pathname === "/" ? styles.activeLink : ""}
           >
-            <img src={homeIcon} alt="Inicio" className={styles.homeIconLarge} />
-            <img src={homeIcon2} alt="Inicio" className={styles.homeIconSmall} />
+            <img src={homeIcon} alt={t("nav.home")} className={styles.homeIconLarge} />
+            <img src={homeIcon2} alt={t("nav.home")} className={styles.homeIconSmall} />
           </Link>
         </li>
         <li
@@ -69,7 +72,7 @@ function Navigation() {
             onClick={toggleDropdown}
             aria-expanded={isDropdownOpen}
           >
-            Casas
+            {t("nav.houses")}
           </button>
           <ul
             className={`${styles.dropdown} ${isDropdownOpen ? styles.visible : ""}`}
@@ -156,7 +159,7 @@ function Navigation() {
             onClick={closeMenu}
             className={pathname === "/reviews" ? styles.activeLink : ""}
           >
-            Reseñas
+            {t("nav.reviews")}
           </Link>
         </li>
         <li>
@@ -165,8 +168,11 @@ function Navigation() {
             onClick={closeMenu}
             className={pathname === "/contact" ? styles.activeLink : ""}
           >
-            Contacto
+            {t("nav.contact")}
           </Link>
+        </li>
+        <li className={styles.langItem}>
+          <LangButton />
         </li>
       </ul>
     </nav>

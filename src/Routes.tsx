@@ -19,7 +19,8 @@ import {
   begosHouse,
   changosHouse,
 } from "./utils/utils";
-import { houseInfo } from "./data/housesInfo";
+import { getHouseInfo } from "./data/housesInfo";
+import { useTranslation } from "react-i18next";
 
 function ScrollToTopLayout() {
   const { pathname } = useLocation();
@@ -32,6 +33,9 @@ function ScrollToTopLayout() {
 }
 
 function Routes() {
+  const { t } = useTranslation();
+  const houseInfo = getHouseInfo(t);
+
   const router = createBrowserRouter([
     {
       element: <ScrollToTopLayout />,
@@ -49,6 +53,7 @@ function Routes() {
               desc={houseInfo.LuciasHouse.desc}
               includes={houseInfo.LuciasHouse.includes}
               overview={houseInfo.LuciasHouse.overview}
+              location={houseInfo.LuciasHouse.location}
             />
           ),
         },
@@ -61,6 +66,7 @@ function Routes() {
               desc={houseInfo.NievesHouse.desc}
               includes={houseInfo.NievesHouse.includes}
               overview={houseInfo.NievesHouse.overview}
+              location={houseInfo.NievesHouse.location}
             />
           ),
         },
@@ -73,6 +79,7 @@ function Routes() {
               desc={houseInfo.MariasHouse.desc}
               includes={houseInfo.MariasHouse.includes}
               overview={houseInfo.MariasHouse.overview}
+              location={houseInfo.MariasHouse.location}
             />
           ),
         },
@@ -85,6 +92,7 @@ function Routes() {
               desc={houseInfo.CasaAzul.desc}
               includes={houseInfo.CasaAzul.includes}
               overview={houseInfo.CasaAzul.overview}
+              location={houseInfo.CasaAzul.location}
             />
           ),
         },
@@ -97,6 +105,7 @@ function Routes() {
               desc={houseInfo.CasaAzulCorazon.desc}
               includes={houseInfo.CasaAzulCorazon.includes}
               overview={houseInfo.CasaAzulCorazon.overview}
+              location={houseInfo.CasaAzulCorazon.location}
             />
           ),
         },
@@ -109,6 +118,7 @@ function Routes() {
               desc={houseInfo.BegosHouse.desc}
               includes={houseInfo.BegosHouse.includes}
               overview={houseInfo.BegosHouse.overview}
+              location={houseInfo.BegosHouse.location}
             />
           ),
         },
@@ -121,6 +131,7 @@ function Routes() {
               desc={houseInfo.ChangosHouse.desc}
               includes={houseInfo.ChangosHouse.includes}
               overview={houseInfo.ChangosHouse.overview}
+              location={houseInfo.ChangosHouse.location}
             />
           ),
         },
@@ -133,6 +144,7 @@ function Routes() {
               desc={houseInfo.EstudioTiliche.desc}
               includes={houseInfo.EstudioTiliche.includes}
               overview={houseInfo.EstudioTiliche.overview}
+              location={houseInfo.EstudioTiliche.location}
             />
           ),
         },

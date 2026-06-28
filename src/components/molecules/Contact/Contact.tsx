@@ -4,8 +4,10 @@ import Navigation from "../Navigation/Navigation";
 import background from "../../../assets/background.jpg";
 import Footer from "../Footer/Footer";
 import LineSeparator from "../../atoms/Line/LineSeparator";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -19,7 +21,7 @@ const Contact = () => {
 
     const payload = {
       from: email,
-      subject: `Message from ${name}`,
+      subject: t("contact.emailSubject", { name }),
       text: message,
     };
 
@@ -36,16 +38,16 @@ const Contact = () => {
       );
 
       if (response.ok) {
-        setStatus("Tu mensaje se envió correctamente.");
+        setStatus(t("contact.status.success"));
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        setStatus("No pudimos enviar tu mensaje. Inténtalo de nuevo.");
+        setStatus(t("contact.status.error"));
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      setStatus("Ocurrió un error al enviar el mensaje.");
+      setStatus(t("contact.status.unexpected"));
     } finally {
       setIsSubmitting(false);
     }
@@ -60,60 +62,59 @@ const Contact = () => {
           <div className={styles.photoSection}>
             <img
               src={background}
-              alt="Vista de Bacalar"
+              alt={t("contact.imageAlt")}
               className={styles.contactPhoto}
             />
           </div>
           <div className={styles.infoSection}>
-            <span className={styles.kicker}>Hablemos</span>
-            <h1 className={styles.contactTitle}>Reserva con más claridad y menos fricción</h1>
-            <p className={styles.contactDescription}>
-              Escríbenos para consultar disponibilidad, resolver dudas o
-              encontrar la casa ideal para tu viaje.
-            </p>
+            <span className={styles.kicker}>{t("contact.kicker")}</span>
+            <h1 className={styles.contactTitle}>{t("contact.title")}</h1>
+            <p className={styles.contactDescription}>{t("contact.description")}</p>
             <div className={styles.contactLinks}>
               <a
-                href="https://wa.me/+529841820450?text=Hola, me gustaría conocer la disponibilidad de sus casas en Bacalar."
+                href={`https://wa.me/+529841820450?text=${encodeURIComponent(
+                  t("contact.whatsAppMessage")
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.contactLink} ${styles.whatsapp}`}
               >
-                WhatsApp directo
+                {t("contact.whatsAppLabel")}
               </a>
             </div>
             <form className={styles.contactForm} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="name">Nombre</label>
+                <label htmlFor="name">{t("contact.form.name")}</label>
                 <input
                   type="text"
                   id="name"
                   className={styles.formControl}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Tu nombre"
+                  placeholder={t("contact.form.namePlaceholder")}
                   required
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="email">Correo</label>
+                <label htmlFor="email">{t("contact.form.email")}</label>
                 <input
                   type="email"
                   id="email"
                   className={styles.formControl}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="tu@email.com"
+                  placeholder={t("contact.form.emailPlaceholder")}
                   required
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="message">Mensaje</label>
+                <label htmlFor="message">{t("contact.form.message")}</label>
                 <textarea
                   id="message"
                   className={styles.formControl}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Cuéntanos fechas, número de huéspedes o cualquier detalle útil."
+                  placeholder={t("contact.form.messagePlaceholder")}
                   required
                 ></textarea>
               </div>
@@ -122,7 +123,9 @@ const Contact = () => {
                 className={styles.submitButton}
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                {isSubmitting
+                  ? t("contact.form.submitting")
+                  : t("contact.form.submit")}
               </button>
             </form>
             {status && <p className={styles.statusMessage}>{status}</p>}

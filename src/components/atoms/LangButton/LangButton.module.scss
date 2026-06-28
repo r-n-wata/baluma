@@ -1,15 +1,43 @@
 .langButtonCon {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  display: flex;
+  align-items: center;
 
   button {
-    background-color: transparent;
-    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.45rem 0.75rem;
+    background-color: rgba(252, 251, 251, 0.95);
+    border: 1px solid rgba(31, 59, 77, 0.12);
+    border-radius: 999px;
+    box-shadow: 0 10px 25px rgba(31, 59, 77, 0.12);
+    cursor: pointer;
+    color: #1f3b4d;
+
     img {
-      background-color: rgb(252, 251, 251);
-      border-radius: 50%;
-      width: 2.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .langButtonCon {
+    width: 100%;
+
+    button {
+      width: 100%;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.16);
+      box-shadow: none;
+      color: #fff;
     }
   }
 }

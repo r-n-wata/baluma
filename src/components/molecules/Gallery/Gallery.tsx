@@ -1,7 +1,9 @@
 import styles from "./Gallery.module.scss";
+import { useTranslation } from "react-i18next";
 
 function Gallery({ photos }: { photos: string[] }) {
-  console.log(photos);
+  const { t } = useTranslation();
+
   return (
     <div className={styles.gallery}>
       {photos.map((photo, index) => (
@@ -11,7 +13,7 @@ function Gallery({ photos }: { photos: string[] }) {
             index % 2 === 0 ? styles.vertical : styles.horizontal
           }`}
         >
-          <img src={photo} alt={`Photo ${index + 1}`} />
+          <img src={photo} alt={t("common.galleryPhotoAlt", { index: index + 1 })} />
         </div>
       ))}
     </div>

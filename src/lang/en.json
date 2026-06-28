@@ -1,3 +1,389 @@
 {
-  "LUCIAS_DESC": "Casa azul es una casa de dos pisos de estilo maya-balinés. Se encuentra en una excelente ubicación: a media cuadra del parque central y a una cuadra de la laguna. Cuenta con vistas panorámicas desde la habitación en planta alta. Tiene jacuzzi en la terraza. Casi siempre llega una brisa fresca de la laguna, ya que está muy cerca. Incluso en el calor se siente fresca ya que se encuentra rodeada de naturaleza y está construida con materiales naturales."
+  "common": {
+    "collection": "Baluma Collection",
+    "location": "Location",
+    "openInGoogleMaps": "Open in Google Maps",
+    "reserveNow": "Reserve Now",
+    "stats": {
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "guests": "Guests"
+    },
+    "galleryPhotoAlt": "Property photo {{index}}",
+    "mapTitle": "Map of {{name}}"
+  },
+  "language": {
+    "switch": "Switch language",
+    "switchTo": "Switch to {{language}}",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "nav": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Home",
+    "houses": "Homes",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Serene stays to discover Bacalar at an easier pace.",
+    "subtitle": "Homes with character near the lagoon.",
+    "highlights": [
+      "Stays by the lagoon",
+      "Spaces designed for calm"
+    ]
+  },
+  "about": {
+    "kicker": "Your next stay",
+    "title": "About",
+    "description": "At Baluma Bacalar we bring together spaces designed to experience the lagoon at a calmer pace. You will find waterfront stays, homes surrounded by nature, and central options with a clearer booking experience from the very first look.",
+    "features": [
+      "Privileged views and stays with their own identity.",
+      "A curated selection for quiet getaways or family trips.",
+      "Direct guidance to help you find the home that fits you best."
+    ]
+  },
+  "slide": {
+    "kicker": "Explore Baluma",
+    "title": "A more thoughtful look at every stay",
+    "description": "Browse the spaces, materials, and corners that make each property distinct before you book.",
+    "ariaLabel": "Property gallery"
+  },
+  "contact": {
+    "kicker": "Let's talk",
+    "title": "Book with more clarity and less friction",
+    "description": "Write to us to check availability, resolve questions, or find the ideal home for your trip.",
+    "whatsAppLabel": "Direct WhatsApp",
+    "whatsAppMessage": "Hi, I would like to know the availability of your homes in Bacalar.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us your dates, number of guests, or any helpful detail.",
+      "submit": "Send message",
+      "submitting": "Sending..."
+    },
+    "status": {
+      "success": "Your message was sent successfully.",
+      "error": "We couldn't send your message. Please try again.",
+      "unexpected": "An error occurred while sending the message."
+    },
+    "emailSubject": "Message from {{name}}",
+    "imageAlt": "View of Bacalar"
+  },
+  "reviews": {
+    "heroKicker": "Real experiences",
+    "heroTitle": "Guest reviews",
+    "heroDescription": "A collection of experiences that shows what staying at Baluma feels like, without relying on a swipeable carousel.",
+    "addReview": "Add review",
+    "loading": "Loading reviews...",
+    "error": "We couldn't load the reviews right now.",
+    "filters": {
+      "label": "Filter",
+      "all": "All",
+      "five": "5 stars",
+      "four": "4 stars",
+      "threeOrLess": "3 or less"
+    },
+    "results": "Showing {{shown}} of {{total}} reviews",
+    "empty": "There are no reviews matching these filters.",
+    "modal": {
+      "close": "Close modal",
+      "title": "Share your experience",
+      "namePlaceholder": "Name",
+      "emailPlaceholder": "Email address",
+      "reviewPlaceholder": "Tell us how your stay was",
+      "rating": "Rating: {{count}} star(s)",
+      "submit": "Submit",
+      "submitting": "Sending..."
+    }
+  },
+  "footer": {
+    "tagline": "Calm stays, thoughtful design, and a great location."
+  },
+  "houses": {
+    "lucias": {
+      "name": "Lucia's House",
+      "desc": "Watch the sun and moon rise from the living room, beneath the private palapa, by the lagoon, or from a lounger on the dock while enjoying the nature around you. Lucia's House sits on the same property as three other homes and is ideal for couples. If you are traveling with a larger group, take a look at Nieve's, Bego's, and Maria's as well. The home enjoys an excellent location on Costera Sur, facing Bird Island.",
+      "includes": [
+        {
+          "title": "The stay",
+          "items": [
+            "Large and peaceful bedroom",
+            "Air conditioning",
+            "Ceiling fan",
+            "King bed",
+            "Full bathroom",
+            "Views of the lagoon and garden. The house is elegant and gives guests plenty of room to rest and enjoy Bacalar's natural beauty."
+          ]
+        },
+        {
+          "title": "Other details to note",
+          "items": [
+            "The docks, bikes, kayaks, and paddle boards are shared with 3 other homes.",
+            "The palapa in front of Lucia's House is private.",
+            "Security cameras on site",
+            "Each home includes a safe",
+            "We respect our neighbors and quiet hours begin at 10 pm",
+            "Wi-Fi in every room",
+            "We are next to a family restaurant, facing Bird Island",
+            "Grill",
+            "Life jackets",
+            "We do not accept pets",
+            "Minimum stay: 2 nights"
+          ]
+        }
+      ]
+    },
+    "nieves": {
+      "name": "Nieve's House",
+      "desc": "This place is surrounded by nature, from fruit trees to aromatic plants. Nieve's House sits on the same property as three other homes and is ideal for couples. If you are looking for more accommodations for a group, take a look at Lucia's, Bego's, and Maria's. The property enjoys an excellent location on Costera Sur, facing Bird Island.",
+      "includes": [
+        {
+          "title": "The stay",
+          "items": [
+            "Terrace with table and private plunge pool",
+            "Lagoon and garden views",
+            "Home with kitchen and dining area",
+            "Bedroom with king bed and air conditioning",
+            "Private full bathroom",
+            "Our kitchens are equipped with modern appliances and everything you need to cook. The stove is induction and we also provide a refrigerator."
+          ]
+        },
+        {
+          "title": "Other details to note",
+          "items": [
+            "The docks, bikes, kayaks, and paddle boards are shared with 3 other homes.",
+            "The palapa in front of Lucia's House is private.",
+            "Security cameras on site",
+            "Each home includes a safe",
+            "We respect our neighbors and quiet hours begin at 10 pm",
+            "Wi-Fi in every room",
+            "We are next to a family restaurant, facing Bird Island",
+            "Grill",
+            "Life jackets",
+            "We do not accept pets",
+            "Minimum stay: 2 nights"
+          ]
+        }
+      ]
+    },
+    "marias": {
+      "name": "Maria's House",
+      "desc": "This apartment has a balcony overlooking the lagoon and garden. Relax in the jacuzzi on the terrace. The docks, garden, bikes, and kayaks are shared with 3 other stays: Lucia's, Bego's, and Nieve's. If you are traveling with friends or family, feel free to ask about booking all the spaces together. Our garden is full of local plants and birds, with swings and hammocks in the water.",
+      "includes": [
+        {
+          "title": "The stay",
+          "items": [
+            "Upper floor: studio with a kitchen equipped with modern appliances (microwave, electric kettle, coffee maker, coffee, blender). Two queen beds, air conditioning, and fans",
+            "Ground floor: private bathroom with hot water"
+          ]
+        },
+        {
+          "title": "Other details to note",
+          "items": [
+            "The docks, bikes, kayaks, and paddle boards are shared with 3 other homes.",
+            "The palapa in front of Lucia's House is private.",
+            "Security cameras on site",
+            "Each home includes a safe",
+            "We respect our neighbors and quiet hours begin at 10 pm",
+            "Wi-Fi in every room",
+            "We are next to a family restaurant, facing Bird Island",
+            "Grill",
+            "Life jackets",
+            "We do not accept pets",
+            "Minimum stay: 2 nights"
+          ]
+        }
+      ]
+    },
+    "casaAzul": {
+      "name": "Casa Azul",
+      "desc": "Casa Azul is a two-story home with a Mayan-Balinese style. It enjoys an excellent location: half a block from the main square and one block from the lagoon. The upstairs bedroom has panoramic views, and the terrace includes a jacuzzi. A cool breeze usually arrives from the lagoon, so the house feels fresh even in warm weather thanks to the surrounding nature and natural materials.",
+      "includes": [
+        {
+          "title": "Jungle rooms",
+          "items": [
+            "Double bed",
+            "Private outdoor bathroom",
+            "Fans",
+            "Hot water"
+          ]
+        },
+        {
+          "title": "Coral room",
+          "items": [
+            "One queen bed",
+            "Fans"
+          ]
+        },
+        {
+          "title": "Other details to note",
+          "items": [
+            "Excellent Wi-Fi",
+            "We can share our best local restaurant, gourmet, and tour recommendations in Bacalar and Mahahual",
+            "We do not accept pets",
+            "No private parking available (street parking only on the right side)",
+            "When you stay with us, you get exclusive access to CASA BAKAL hotel (located on Costera Sur), subject to availability from 11 am to 6 pm. Restaurant, therapy, and course purchases are additional. Kayaks, paddle boards, the pool, and towels are included."
+          ]
+        }
+      ]
+    },
+    "casaAzulCorazon": {
+      "name": "Casa Azul Corazon",
+      "desc": "",
+      "includes": [
+        {
+          "title": "Room 1",
+          "items": [
+            "1 queen bed",
+            "1 single bed",
+            "Full bathroom",
+            "Partial lagoon view"
+          ]
+        },
+        {
+          "title": "Room 2",
+          "items": [
+            "2 double beds",
+            "Full bathroom",
+            "Closet",
+            "Independent terrace access",
+            "Partial lagoon view"
+          ]
+        },
+        {
+          "title": "Living room",
+          "items": [
+            "Double sofa bed"
+          ]
+        },
+        {
+          "title": "Kitchen",
+          "items": [
+            "Gas stove",
+            "9-foot refrigerator",
+            "Coffee maker",
+            "Microwave",
+            "Cookware and dinnerware"
+          ]
+        },
+        {
+          "title": "Terraces",
+          "items": [
+            "Outdoor lounge",
+            "Dining area",
+            "Hammock",
+            "Swing"
+          ]
+        },
+        {
+          "title": "Main garden",
+          "items": [
+            "Private cove access to the lagoon",
+            "Grill",
+            "Sun loungers",
+            "Fire pit area",
+            "2 outdoor lounge areas",
+            "Grass area for ball games",
+            "Slackline",
+            "Hammock",
+            "Double kayak",
+            "Stand up paddle board"
+          ]
+        },
+        {
+          "title": "Back garden",
+          "items": [
+            "Shaded parking for 4 cars",
+            "Biodigester",
+            "Compost",
+            "Vegetable garden"
+          ]
+        }
+      ]
+    },
+    "begos": {
+      "name": "Bego's House",
+      "desc": "This apartment has a balcony facing the lagoon with garden views and a jacuzzi on its terrace. It is perfect for a couple or a family of 4 or 5. The docks, garden, bikes, and kayaks are shared with 3 other stays: Lucia's, Maria's, and Nieve's. If you are traveling with friends or family, ask about booking all the spaces together. Our garden is full of local plants and birds, with swings and hammocks in the water.",
+      "includes": [
+        {
+          "title": "The stay",
+          "items": [
+            "Ground floor: kitchen, dining area, double bed, sofa bed, and bathroom with hot water, air conditioning, and fans",
+            "Upper floor: king bed, terrace with lagoon view, and jacuzzi. Air conditioning",
+            "The rooms are not separated by doors, only by a staircase",
+            "Kitchen equipped with modern appliances (gas stove, microwave, electric kettle, coffee maker, coffee, blender)"
+          ]
+        },
+        {
+          "title": "Other details to note",
+          "items": [
+            "The docks, bikes, kayaks, and paddle boards are shared with 3 other homes.",
+            "The palapa in front of Lucia's House is private.",
+            "Security cameras on site",
+            "Each home includes a safe",
+            "We respect our neighbors and quiet hours begin at 10 pm",
+            "Wi-Fi in every room",
+            "We are next to a family restaurant, facing Bird Island",
+            "Grill",
+            "Life jackets",
+            "We do not accept pets",
+            "Minimum stay: 2 nights"
+          ]
+        }
+      ]
+    },
+    "changos": {
+      "name": "Chango's House",
+      "desc": "Disconnect from routine in our beautiful and cozy house and enjoy the surrounding nature in a large garden. The house, including the front and back gardens, is completely private and ideal for couples or small families. We are just steps from some of the best places and restaurants in town, and only three blocks from public lagoon access. If you need to work during your stay, the whole house has air conditioning and high-speed Wi-Fi.",
+      "includes": [
+        {
+          "title": "The stay",
+          "items": [
+            "A spacious home with one bedroom, living room, dining room, and fully equipped kitchen",
+            "The bedroom has a queen bed, a full bathroom, and storage furniture for your clothes",
+            "The living room includes a resting area with two single beds, so we can host 2 to 4 guests. The garden is large and includes a palapa, outdoor dining area, barbecue area, and a second bathroom on the terrace."
+          ]
+        },
+        {
+          "title": "Other details to note",
+          "items": [
+            "Parking inside the property",
+            "Hot water",
+            "Fans",
+            "Fiber-optic Wi-Fi",
+            "Safe",
+            "Security cameras"
+          ]
+        }
+      ]
+    },
+    "tiliche": {
+      "name": "Estudio Tiliche",
+      "desc": "Disconnect from your routine while staying under the stars, surrounded by trees and birdsong. Enjoy your stay with lagoon views from our exclusive terrace.",
+      "includes": [
+        {
+          "title": "Room 1",
+          "items": [
+            "King bed",
+            "Kitchen equipped with modern appliances",
+            "Bathroom with hot water",
+            "Fiber-optic Wi-Fi",
+            "2 private decks and terrace"
+          ]
+        },
+        {
+          "title": "Other spaces",
+          "items": [
+            "Parking spot on the curb, not covered",
+            "When you stay with us, you get exclusive access to CASA BAKAL hotel (located on Costera Sur), subject to availability from 11 am to 6 pm. Restaurant, therapy, and course purchases are additional. Kayaks, paddle boards, the pool, and towels are included."
+          ]
+        }
+      ]
+    }
+  }
 }

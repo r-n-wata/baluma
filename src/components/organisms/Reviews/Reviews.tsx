@@ -7,8 +7,10 @@ import useReviews from "../../../hooks/useReviews";
 import StarRating from "../../atoms/StarRating/StarRating";
 import Footer from "../../molecules/Footer/Footer";
 import LineSeparator from "../../atoms/Line/LineSeparator";
+import { useTranslation } from "react-i18next";
 
 function Reviews() {
+  const { t, i18n } = useTranslation();
   const { reviews, loading, error, addReview, fetchReviews } = useReviews();
   const [selectedRating, setSelectedRating] = useState<"all" | "5" | "4" | "3">(
     "all"
@@ -82,21 +84,18 @@ function Reviews() {
         <main className={styles.reviewsCon}>
           <section className={styles.hero}>
             <div className={styles.title}>
-              <span>Experiencias reales</span>
-              <h2>Reseñas de huéspedes</h2>
-              <p>
-                Una colección de experiencias que transmite cómo se vive una
-                estancia en Baluma, sin necesidad de deslizar entre tarjetas.
-              </p>
+              <span>{t("reviews.heroKicker")}</span>
+              <h2>{t("reviews.heroTitle")}</h2>
+              <p>{t("reviews.heroDescription")}</p>
             </div>
           </section>
 
           <button onClick={toggleModal} className={styles.addReviewBtn}>
-            Añadir reseña
+            {t("reviews.addReview")}
           </button>
 
-          {loading && <p className={styles.feedback}>Cargando reseñas...</p>}
-          {error && <p className={styles.feedback}>{error}</p>}
+          {loading && <p className={styles.feedback}>{t("reviews.loading")}</p>}
+          {error && <p className={styles.feedback}>{t("reviews.error")}</p>}
 
           <section className={styles.reviewsSection}>
             <img className={styles.topQuote} src={Quote} alt="" />
@@ -104,51 +103,54 @@ function Reviews() {
 
             <div className={styles.filtersBar}>
               <div className={styles.filterGroup}>
-                <span>Filtrar</span>
+                <span>{t("reviews.filters.label")}</span>
                 <button
                   type="button"
                   className={selectedRating === "all" ? styles.activeFilter : ""}
                   onClick={() => setSelectedRating("all")}
                 >
-                  Todas
+                  {t("reviews.filters.all")}
                 </button>
                 <button
                   type="button"
                   className={selectedRating === "5" ? styles.activeFilter : ""}
                   onClick={() => setSelectedRating("5")}
                 >
-                  5 estrellas
+                  {t("reviews.filters.five")}
                 </button>
                 <button
                   type="button"
                   className={selectedRating === "4" ? styles.activeFilter : ""}
                   onClick={() => setSelectedRating("4")}
                 >
-                  4 estrellas
+                  {t("reviews.filters.four")}
                 </button>
                 <button
                   type="button"
                   className={selectedRating === "3" ? styles.activeFilter : ""}
                   onClick={() => setSelectedRating("3")}
                 >
-                  3 o menos
+                  {t("reviews.filters.threeOrLess")}
                 </button>
               </div>
             </div>
 
             <p className={styles.resultsCount}>
-              Mostrando {filteredReviews.length} de {reviewCount} reseñas
+              {t("reviews.results", {
+                shown: filteredReviews.length,
+                total: reviewCount,
+              })}
             </p>
 
             {filteredReviews.length > 0 ? (
               <div className={styles.reviewsGrid}>
                 {filteredReviews.map((obj, index) => {
                   const formattedDate = obj.normalizedCreatedAt.toLocaleDateString(
-                    "es-MX",
+                    i18n.resolvedLanguage === "es" ? "es-MX" : "en-US",
                     {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
                     }
                   );
 
@@ -167,7 +169,7 @@ function Reviews() {
             ) : (
               !loading && (
                 <p className={styles.feedback}>
-                  No hay reseñas que coincidan con estos filtros.
+                  {t("reviews.empty")}
                 </p>
               )
             )}
@@ -180,16 +182,16 @@ function Reviews() {
                   type="button"
                   className={styles.closeModal}
                   onClick={toggleModal}
-                  aria-label="Cerrar modal"
+                  aria-label={t("reviews.modal.close")}
                 >
                   X
                 </button>
-                <h3>Comparte tu experiencia</h3>
+                <h3>{t("reviews.modal.title")}</h3>
                 <form onSubmit={handleSubmit}>
                   <input
                     type="text"
                     name="clientName"
-                    placeholder="Nombre"
+                    placeholder={t("reviews.modal.namePlaceholder")}
                     value={newReview.clientName}
                     onChange={handleInputChange}
                     required
@@ -197,25 +199,29 @@ function Reviews() {
                   <input
                     type="email"
                     name="email"
-                    placeholder="Correo electrónico"
+                    placeholder={t("reviews.modal.emailPlaceholder")}
                     value={newReview.email}
                     onChange={handleInputChange}
                     required
                   />
                   <textarea
                     name="review"
-                    placeholder="Cuéntanos cómo fue tu estancia"
+                    placeholder={t("reviews.modal.reviewPlaceholder")}
                     value={newReview.review}
                     onChange={handleInputChange}
                     required
                   />
                   <div className={styles.starRating}>
                     <StarRating onRate={handleRating} />
-                    <p>Calificación: {newReview.rating} estrella(s)</p>
+                    <p>{t("reviews.modal.rating", { count: newReview.rating })}</p>
                   </div>
                   <input
                     type="submit"
-                    value={isSubmitting ? "Enviando..." : "Enviar"}
+                    value={
+                      isSubmitting
+                        ? t("reviews.modal.submitting")
+                        : t("reviews.modal.submit")
+                    }
                     disabled={isSubmitting || newReview.rating === 0}
                   />
                 </form>
