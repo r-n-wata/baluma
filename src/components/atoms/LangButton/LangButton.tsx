@@ -1,4 +1,3 @@
-import Globe2 from "../../../assets/globe2.png";
 import styles from "./LangButton.module.scss";
 import { useTranslation } from "react-i18next";
 import { changeLanguage } from "../../../lang/i18n";
@@ -6,22 +5,29 @@ import { changeLanguage } from "../../../lang/i18n";
 function LangButton() {
   const { i18n, t } = useTranslation();
   const currentLanguage = i18n.resolvedLanguage === "es" ? "es" : "en";
-  const nextLanguage = currentLanguage === "es" ? "en" : "es";
-  const nextLanguageLabel = t(
-    nextLanguage === "es" ? "language.spanish" : "language.english"
-  );
 
   return (
-    <div className={styles.langButtonCon}>
+    <div className={styles.langButtonCon} aria-label={t("language.switch")} role="group">
       <button
-        className={styles.button}
+        className={`${styles.button} ${currentLanguage === "es" ? styles.active : ""}`}
         type="button"
-        onClick={() => changeLanguage(nextLanguage)}
-        aria-label={t("language.switchTo", { language: nextLanguageLabel })}
-        title={t("language.switch")}
+        onClick={() => changeLanguage("es")}
+        aria-pressed={currentLanguage === "es"}
+        aria-label={t("language.switchTo", { language: t("language.spanish") })}
       >
-        <img src={Globe2} alt="" className={styles.globe} />
-        <span>{nextLanguage.toUpperCase()}</span>
+        ES
+      </button>
+      <span className={styles.separator} aria-hidden="true">
+        /
+      </span>
+      <button
+        className={`${styles.button} ${currentLanguage === "en" ? styles.active : ""}`}
+        type="button"
+        onClick={() => changeLanguage("en")}
+        aria-pressed={currentLanguage === "en"}
+        aria-label={t("language.switchTo", { language: t("language.english") })}
+      >
+        EN
       </button>
     </div>
   );

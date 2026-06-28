@@ -11,6 +11,7 @@ import bedroom from "../../../assets/bedroom.png";
 import people from "../../../assets/poeple.png";
 import { useTranslation } from "react-i18next";
 import { HouseLocation, HouseSection } from "../../../data/housesInfo";
+import Seo from "../../atoms/Seo/Seo";
 
 function House({
   title,
@@ -36,6 +37,10 @@ function House({
 
   return (
     <div className={styles.houseCon}>
+      <Seo
+        title={title}
+        description={desc.trim() || t("seo.houseFallbackDescription", { name: title })}
+      />
       <Navigation />
       <section className={styles.hero}>
         <span className={styles.kicker}>{t("common.collection")}</span>

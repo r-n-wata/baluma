@@ -5,6 +5,7 @@ import background from "../../../assets/background.jpg";
 import Footer from "../Footer/Footer";
 import LineSeparator from "../../atoms/Line/LineSeparator";
 import { useTranslation } from "react-i18next";
+import Seo from "../../atoms/Seo/Seo";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -55,6 +56,10 @@ const Contact = () => {
 
   return (
     <>
+      <Seo
+        title={t("seo.contactTitle")}
+        description={t("seo.contactDescription")}
+      />
       <Navigation />
       <div className={styles.contactPage}>
         <LineSeparator />

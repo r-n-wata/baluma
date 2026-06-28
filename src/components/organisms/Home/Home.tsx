@@ -4,6 +4,7 @@ import Slide from "../../molecules/Slide/Slide";
 import styles from "./Home.module.scss";
 import Footer from "../../molecules/Footer/Footer";
 import { useTranslation } from "react-i18next";
+import Seo from "../../atoms/Seo/Seo";
 
 function Home() {
   const { t } = useTranslation();
@@ -11,6 +12,10 @@ function Home() {
 
   return (
     <main>
+      <Seo
+        title={t("seo.homeTitle")}
+        description={t("seo.homeDescription")}
+      />
       <Navigation />
       <div className={styles.home}>
         <section className={styles.homeSection}>

@@ -1,43 +1,71 @@
 .langButtonCon {
   display: flex;
   align-items: center;
+  padding: 0.3rem 0.4rem;
+  background-color: rgba(252, 251, 251, 0.95);
+  border: 1px solid rgba(31, 59, 77, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(31, 59, 77, 0.12);
+}
 
-  button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    padding: 0.45rem 0.75rem;
-    background-color: rgba(252, 251, 251, 0.95);
-    border: 1px solid rgba(31, 59, 77, 0.12);
-    border-radius: 999px;
-    box-shadow: 0 10px 25px rgba(31, 59, 77, 0.12);
-    cursor: pointer;
-    color: #1f3b4d;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  padding: 0.45rem 0.65rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  color: rgba(31, 59, 77, 0.58);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
 
-    img {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+.button:hover {
+  color: #1f3b4d;
+}
 
-    span {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-    }
-  }
+.active {
+  background: #1f3b4d;
+  color: #f8f4ee;
+}
+
+.separator {
+  color: rgba(31, 59, 77, 0.32);
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
   .langButtonCon {
     width: 100%;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: none;
 
-    button {
-      width: 100%;
-      justify-content: center;
-      background-color: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.16);
-      box-shadow: none;
+    .button {
+      flex: 1;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .button:hover {
       color: #fff;
+    }
+
+    .active {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+    }
+
+    .separator {
+      color: rgba(255, 255, 255, 0.38);
     }
   }
 }

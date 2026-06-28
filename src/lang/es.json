@@ -104,6 +104,15 @@
   "footer": {
     "tagline": "Hospedajes con calma, diseno y buena ubicacion."
   },
+  "seo": {
+    "homeTitle": "Casas vacacionales en Bacalar",
+    "homeDescription": "Baluma Bacalar ofrece casas y estancias con encanto cerca de la laguna, con opciones frente al agua y en el centro para escapadas tranquilas en Bacalar.",
+    "contactTitle": "Contacto y reservas",
+    "contactDescription": "Contacta a Baluma Bacalar para consultar disponibilidad, resolver dudas y reservar la casa ideal para tu viaje.",
+    "reviewsTitle": "Resenas de huespedes",
+    "reviewsDescription": "Lee las resenas de huespedes de Baluma Bacalar y conoce como viven los viajeros estas estancias cerca de la laguna.",
+    "houseFallbackDescription": "Descubre {{name}}, una estancia de Baluma Bacalar cerca de la laguna con un ambiente tranquilo y una reserva mas clara."
+  },
   "houses": {
     "lucias": {
       "name": "Lucia's House",

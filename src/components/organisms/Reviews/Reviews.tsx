@@ -8,6 +8,7 @@ import StarRating from "../../atoms/StarRating/StarRating";
 import Footer from "../../molecules/Footer/Footer";
 import LineSeparator from "../../atoms/Line/LineSeparator";
 import { useTranslation } from "react-i18next";
+import Seo from "../../atoms/Seo/Seo";
 
 function Reviews() {
   const { t, i18n } = useTranslation();
@@ -78,6 +79,10 @@ function Reviews() {
 
   return (
     <div>
+      <Seo
+        title={t("seo.reviewsTitle")}
+        description={t("seo.reviewsDescription")}
+      />
       <Navigation />
       <div className={styles.reviewsConCon}>
         <LineSeparator />

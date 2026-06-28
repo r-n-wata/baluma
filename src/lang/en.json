@@ -104,6 +104,15 @@
   "footer": {
     "tagline": "Calm stays, thoughtful design, and a great location."
   },
+  "seo": {
+    "homeTitle": "Vacation rentals in Bacalar",
+    "homeDescription": "Baluma Bacalar offers distinctive homes near the lagoon, with waterfront and central stays designed for calm getaways in Bacalar.",
+    "contactTitle": "Contact and reservations",
+    "contactDescription": "Contact Baluma Bacalar to check availability, ask questions, and book the home that best fits your trip.",
+    "reviewsTitle": "Guest reviews",
+    "reviewsDescription": "Read guest reviews about Baluma Bacalar and learn how travelers experience these stays near the lagoon.",
+    "houseFallbackDescription": "Discover {{name}}, a Baluma Bacalar stay near the lagoon with a calm atmosphere and a clear booking experience."
+  },
   "houses": {
     "lucias": {
       "name": "Lucia's House",
