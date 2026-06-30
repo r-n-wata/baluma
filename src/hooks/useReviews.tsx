@@ -8,7 +8,7 @@ type ReviewsStore = {
   loading: boolean;
   error: string | null;
   fetchReviews: () => Promise<void>;
-  addReview: (review: Review) => Promise<void>;
+  addReview: (review: Review) => Promise<boolean>;
 };
 
 // Custom hook for fetching and interacting with reviews

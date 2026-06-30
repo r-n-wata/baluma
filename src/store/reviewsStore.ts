@@ -7,7 +7,7 @@ type ReviewsStore = {
   loading: boolean;
   error: string | null;
   fetchReviews: () => Promise<void>;
-  addReview: (review: Review) => Promise<void>;
+  addReview: (review: Review) => Promise<boolean>;
 };
 
 const useReviewsStore = create<ReviewsStore>((set) => ({
@@ -32,6 +32,7 @@ const useReviewsStore = create<ReviewsStore>((set) => ({
   // Add a new review
   addReview: async (newReview: Review) => {
     try {
+      set({ error: null });
       const response = await fetch(
         "https://complete-nedi-freelancing123-168024ba.koyeb.app/api/reviews",
         {
@@ -40,10 +41,15 @@ const useReviewsStore = create<ReviewsStore>((set) => ({
           body: JSON.stringify(newReview),
         }
       );
-      const addedReview: Review = await response.json();
-      set((state) => ({ reviews: [...state.reviews, addedReview] }));
+
+      if (!response.ok) {
+        throw new Error("Failed to add review");
+      }
+
+      return true;
     } catch (error) {
       set({ error: "Failed to add review" });
+      return false;
     }
   },
 }));

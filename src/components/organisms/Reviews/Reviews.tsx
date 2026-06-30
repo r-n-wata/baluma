@@ -10,6 +10,34 @@ import LineSeparator from "../../atoms/Line/LineSeparator";
 import { useTranslation } from "react-i18next";
 import Seo from "../../atoms/Seo/Seo";
 
+const getReviewText = (value: unknown): string => {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (!value || typeof value !== "object") {
+    return "";
+  }
+
+  const nestedReview = (value as { review?: unknown }).review;
+  return typeof nestedReview === "string" ? nestedReview : "";
+};
+
+const getReviewName = (value: unknown): string => {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (!value || typeof value !== "object") {
+    return "Guest";
+  }
+
+  const nestedName = (value as { clientName?: unknown }).clientName;
+  return typeof nestedName === "string" && nestedName.trim()
+    ? nestedName
+    : "Guest";
+};
+
 function Reviews() {
   const { t, i18n } = useTranslation();
   const { reviews, loading, error, addReview, fetchReviews } = useReviews();
@@ -43,11 +71,20 @@ function Reviews() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await addReview(newReview);
-    setNewReview({ clientName: "", email: "", review: "", rating: 0 });
-    setOpenModal(false);
-    fetchReviews();
-    setIsSubmitting(false);
+
+    try {
+      const wasSubmitted = await addReview(newReview);
+
+      if (!wasSubmitted) {
+        return;
+      }
+
+      setNewReview({ clientName: "", email: "", review: "", rating: 0 });
+      setOpenModal(false);
+      await fetchReviews();
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const colors = ["#ecf4f0", "#f6efe6", "#ebf3f8", "#f3ede7"];
@@ -55,14 +92,28 @@ function Reviews() {
   const normalizedReviews = useMemo(
     () =>
       (reviews ?? []).map((review, index) => {
-        const rating = Number(review.rating || 0);
-        const createdAt = review.createdAt
+        const reviewRecord =
+          review && typeof review === "object" && "review" in review
+            ? (review as { review?: unknown })
+            : {};
+        const reviewContent = getReviewText(reviewRecord.review ?? review);
+        const clientName = getReviewName(
+          (review as { clientName?: unknown }).clientName ?? review
+        );
+        const rating = Number(
+          (review as { rating?: unknown }).rating ??
+            (reviewRecord.review as { rating?: unknown } | undefined)?.rating ??
+            0
+        );
+        const createdAt = (review as { createdAt?: unknown }).createdAt
           ? new Date(review.createdAt)
           : new Date(0);
 
         return {
           ...review,
-          id: review._id ?? review.id ?? `${review.clientName ?? "review"}-${index}`,
+          clientName,
+          review: reviewContent,
+          id: review._id ?? review.id ?? `${clientName || "review"}-${index}`,
           normalizedRating: Number.isFinite(rating) ? rating : 0,
           normalizedCreatedAt: createdAt,
         };
