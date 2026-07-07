@@ -32,7 +32,11 @@
     "highlights": [
       "Stays by the lagoon",
       "Spaces designed for calm"
-    ]
+    ],
+    "staysKicker": "Explore the homes",
+    "staysTitle": "Find the stay that fits your trip best",
+    "staysDescription": "Each home has its own location, atmosphere, and capacity so you can compare options more clearly before booking.",
+    "staysCta": "View details"
   },
   "about": {
     "kicker": "Your next stay",
@@ -105,15 +109,20 @@
     "tagline": "Calm stays, thoughtful design, and a great location."
   },
   "seo": {
-    "homeTitle": "Vacation rentals in Bacalar",
+    "localeCode": "en-US",
+    "homeTitle": "Vacation rentals and stays in Bacalar",
     "homeDescription": "Baluma Bacalar offers distinctive homes near the lagoon, with waterfront and central stays designed for calm getaways in Bacalar.",
     "contactTitle": "Contact and reservations",
     "contactDescription": "Contact Baluma Bacalar to check availability, ask questions, and book the home that best fits your trip.",
     "reviewsTitle": "Guest reviews",
     "reviewsDescription": "Read guest reviews about Baluma Bacalar and learn how travelers experience these stays near the lagoon.",
+    "houseTitle": "{{name}} in Bacalar",
     "houseFallbackDescription": "Discover {{name}}, a Baluma Bacalar stay near the lagoon with a calm atmosphere and a clear booking experience."
   },
   "houses": {
+    "relatedKicker": "More stays",
+    "relatedTitle": "Explore other Baluma homes",
+    "relatedCta": "View stay",
     "lucias": {
       "name": "Lucia's House",
       "desc": "Watch the sun and moon rise from the living room, beneath the private palapa, by the lagoon, or from a lounger on the dock while enjoying the nature around you. Lucia's House sits on the same property as three other homes and is ideal for couples. If you are traveling with a larger group, take a look at Nieve's, Bego's, and Maria's as well. The home enjoys an excellent location on Costera Sur, facing Bird Island.",

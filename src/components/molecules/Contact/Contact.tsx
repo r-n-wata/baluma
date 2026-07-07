@@ -6,14 +6,17 @@ import Footer from "../Footer/Footer";
 import LineSeparator from "../../atoms/Line/LineSeparator";
 import { useTranslation } from "react-i18next";
 import Seo from "../../atoms/Seo/Seo";
+import { buildWebPageStructuredData } from "../../../seo/structuredData";
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const title = t("seo.contactTitle");
+  const description = t("seo.contactDescription");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,8 +60,14 @@ const Contact = () => {
   return (
     <>
       <Seo
-        title={t("seo.contactTitle")}
-        description={t("seo.contactDescription")}
+        title={title}
+        description={description}
+        structuredData={buildWebPageStructuredData({
+          title,
+          description,
+          pathname: "/contact",
+          locale: i18n.resolvedLanguage === "es" ? "es-MX" : "en-US",
+        })}
       />
       <Navigation />
       <div className={styles.contactPage}>

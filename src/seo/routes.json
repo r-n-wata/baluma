@@ -1,0 +1,108 @@
+[
+  {
+    "path": "/",
+    "kind": "home",
+    "titleKey": "seo.homeTitle",
+    "descriptionKey": "seo.homeDescription"
+  },
+  {
+    "path": "/contact",
+    "kind": "contact",
+    "titleKey": "seo.contactTitle",
+    "descriptionKey": "seo.contactDescription"
+  },
+  {
+    "path": "/reviews",
+    "kind": "reviews",
+    "titleKey": "seo.reviewsTitle",
+    "descriptionKey": "seo.reviewsDescription"
+  },
+  {
+    "path": "/casas/lucias-house",
+    "kind": "house",
+    "houseKey": "lucias",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "guests": 2,
+    "coordinates": "18.659586, -88.399475",
+    "ogImagePath": "/property-og/lucias-house.jpg",
+    "ogImageSource": "src/assets/luciasHouse/p1.jpg"
+  },
+  {
+    "path": "/casas/nieves-house",
+    "kind": "house",
+    "houseKey": "nieves",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "guests": 2,
+    "coordinates": "18.659586, -88.399475",
+    "ogImagePath": "/property-og/nieves-house.jpg",
+    "ogImageSource": "src/assets/nievesHouse/p1.jpg"
+  },
+  {
+    "path": "/casas/marias-house",
+    "kind": "house",
+    "houseKey": "marias",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "guests": 4,
+    "coordinates": "18.659586, -88.399475",
+    "ogImagePath": "/property-og/marias-house.jpg",
+    "ogImageSource": "src/assets/mariasHouse/p1.jpg"
+  },
+  {
+    "path": "/casas/casa-azul",
+    "kind": "house",
+    "houseKey": "casaAzul",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "guests": 7,
+    "coordinates": "18.675610, -88.389626",
+    "ogImagePath": "/property-og/casa-azul.png",
+    "ogImageSource": "src/assets/casaAzul/01.png"
+  },
+  {
+    "path": "/casas/casa-azul-corazon",
+    "kind": "house",
+    "houseKey": "casaAzulCorazon",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "guests": 7,
+    "coordinates": "18.729696, -88.352608",
+    "ogImagePath": "/property-og/casa-azul-corazon.jpg",
+    "ogImageSource": "src/assets/casaAzulCorazon/01.jpg"
+  },
+  {
+    "path": "/casas/begos-house",
+    "kind": "house",
+    "houseKey": "begos",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "guests": 4,
+    "coordinates": "18.659586, -88.399475",
+    "ogImagePath": "/property-og/begos-house.jpg",
+    "ogImageSource": "src/assets/begosHouse/01.jpg"
+  },
+  {
+    "path": "/casas/changos-house",
+    "kind": "house",
+    "houseKey": "changos",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "guests": 4,
+    "coordinates": "18.672401, -88.394440",
+    "ogImagePath": "/property-og/changos-house.png",
+    "ogImageSource": "src/assets/changosHouse/01.png"
+  },
+  {
+    "path": "/casas/mini-house",
+    "kind": "house",
+    "houseKey": "tiliche",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "guests": 2,
+    "coordinates": "18.659409, -88.400177",
+    "ogImagePath": "/property-og/mini-house.jpg",
+    "ogImageSource": "src/assets/miniHouse/01.jpg"
+  }
+]

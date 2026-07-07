@@ -2,35 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://balumabacalar.com/</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/lucias-house</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/nieves-house</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/marias-house</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/casa-azul</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/casa-azul-corazon</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/begos-house</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/changos-house</loc>
-  </url>
-  <url>
-    <loc>https://balumabacalar.com/casas/mini-house</loc>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://balumabacalar.com/contact</loc>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://balumabacalar.com/reviews</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/lucias-house</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/nieves-house</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/marias-house</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/casa-azul</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/casa-azul-corazon</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/begos-house</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/changos-house</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://balumabacalar.com/casas/mini-house</loc>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>

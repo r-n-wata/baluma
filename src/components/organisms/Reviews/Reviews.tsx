@@ -9,6 +9,7 @@ import Footer from "../../molecules/Footer/Footer";
 import LineSeparator from "../../atoms/Line/LineSeparator";
 import { useTranslation } from "react-i18next";
 import Seo from "../../atoms/Seo/Seo";
+import { buildWebPageStructuredData } from "../../../seo/structuredData";
 
 const getReviewText = (value: unknown): string => {
   if (typeof value === "string") {
@@ -41,6 +42,8 @@ const getReviewName = (value: unknown): string => {
 function Reviews() {
   const { t, i18n } = useTranslation();
   const { reviews, loading, error, addReview, fetchReviews } = useReviews();
+  const title = t("seo.reviewsTitle");
+  const description = t("seo.reviewsDescription");
   const [selectedRating, setSelectedRating] = useState<"all" | "5" | "4" | "3">(
     "all"
   );
@@ -131,8 +134,14 @@ function Reviews() {
   return (
     <div>
       <Seo
-        title={t("seo.reviewsTitle")}
-        description={t("seo.reviewsDescription")}
+        title={title}
+        description={description}
+        structuredData={buildWebPageStructuredData({
+          title,
+          description,
+          pathname: "/reviews",
+          locale: i18n.resolvedLanguage === "es" ? "es-MX" : "en-US",
+        })}
       />
       <Navigation />
       <div className={styles.reviewsConCon}>

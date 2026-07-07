@@ -6,6 +6,7 @@ import homeIcon from "../../../assets/home.png";
 import homeIcon2 from "../../../assets/home2.png";
 import { useTranslation } from "react-i18next";
 import LangButton from "../../atoms/LangButton/LangButton";
+import { houseRoutes } from "../../../seo/houseRoutes";
 
 function Navigation() {
   const { t } = useTranslation();
@@ -77,80 +78,17 @@ function Navigation() {
           <ul
             className={`${styles.dropdown} ${isDropdownOpen ? styles.visible : ""}`}
           >
-            <li>
-              <Link
-                to="/casas/lucias-house"
-                onClick={closeMenu}
-                className={isActiveHouse("/casas/lucias-house") ? styles.activeLink : ""}
-              >
-                Lucia&apos;s House
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/casas/nieves-house"
-                onClick={closeMenu}
-                className={isActiveHouse("/casas/nieves-house") ? styles.activeLink : ""}
-              >
-                Nieve&apos;s House
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/casas/marias-house"
-                onClick={closeMenu}
-                className={isActiveHouse("/casas/marias-house") ? styles.activeLink : ""}
-              >
-                Maria&apos;s Loft
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/casas/begos-house"
-                onClick={closeMenu}
-                className={isActiveHouse("/casas/begos-house") ? styles.activeLink : ""}
-              >
-                Bego&apos;s House
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/casas/casa-azul"
-                onClick={closeMenu}
-                className={isActiveHouse("/casas/casa-azul") ? styles.activeLink : ""}
-              >
-                Casa Azul
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/casas/casa-azul-corazon"
-                onClick={closeMenu}
-                className={
-                  isActiveHouse("/casas/casa-azul-corazon") ? styles.activeLink : ""
-                }
-              >
-                Casa Azul Corazon
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/casas/changos-house"
-                onClick={closeMenu}
-                className={isActiveHouse("/casas/changos-house") ? styles.activeLink : ""}
-              >
-                Changos House
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/casas/mini-house"
-                onClick={closeMenu}
-                className={isActiveHouse("/casas/mini-house") ? styles.activeLink : ""}
-              >
-                Estudio Tiliche
-              </Link>
-            </li>
+            {houseRoutes.map((house) => (
+              <li key={house.path}>
+                <Link
+                  to={house.path}
+                  onClick={closeMenu}
+                  className={isActiveHouse(house.path) ? styles.activeLink : ""}
+                >
+                  {house.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </li>
         <li>

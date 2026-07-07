@@ -12,6 +12,11 @@ import people from "../../../assets/poeple.png";
 import { useTranslation } from "react-i18next";
 import { HouseLocation, HouseSection } from "../../../data/housesInfo";
 import Seo from "../../atoms/Seo/Seo";
+import {
+  buildBreadcrumbStructuredData,
+  buildHouseStructuredData,
+} from "../../../seo/structuredData";
+import { houseRoutes } from "../../../seo/houseRoutes";
 
 function House({
   title,
@@ -20,6 +25,7 @@ function House({
   includes,
   overview,
   location,
+  slug,
 }: {
   title: string;
   desc: string;
@@ -27,8 +33,20 @@ function House({
   includes: HouseSection[];
   overview: { bedrooms: number; bathrooms: number; people: number };
   location: HouseLocation;
+  slug: string;
 }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const description =
+    desc.trim() || t("seo.houseFallbackDescription", { name: title });
+  const pageTitle = t("seo.houseTitle", { name: title });
+  const pageImage =
+    houseRoutes.find((house) => house.path === slug)?.ogImagePath ?? "/og-image.png";
+  const relatedHouses = houseRoutes.filter((house) => house.path !== slug).slice(0, 3);
+  const breadcrumbItems = [
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.houses"), path: "/" },
+    { name: title, path: slug },
+  ];
   const stats = [
     { icon: bedroom, label: t("common.stats.bedrooms"), value: overview.bedrooms },
     { icon: bathroom, label: t("common.stats.bathrooms"), value: overview.bathrooms },
@@ -38,8 +56,22 @@ function House({
   return (
     <div className={styles.houseCon}>
       <Seo
-        title={title}
-        description={desc.trim() || t("seo.houseFallbackDescription", { name: title })}
+        title={pageTitle}
+        description={description}
+        image={`https://balumabacalar.com${pageImage}`}
+        structuredData={[
+          buildHouseStructuredData({
+            title,
+            description,
+            pathname: typeof window !== "undefined" ? window.location.pathname : "/",
+            locale: i18n.resolvedLanguage === "es" ? "es-MX" : "en-US",
+            bedrooms: overview.bedrooms,
+            bathrooms: overview.bathrooms,
+            guests: overview.people,
+            coordinates: location.address,
+          }),
+          buildBreadcrumbStructuredData(breadcrumbItems),
+        ]}
       />
       <Navigation />
       <section className={styles.hero}>
@@ -113,6 +145,17 @@ function House({
             {t("common.reserveNow")}
           </Link>
         </div>
+
+        <section className={styles.relatedSection}>
+          <div className={styles.relatedGrid}>
+            {relatedHouses.map((house) => (
+              <Link key={house.path} className={styles.relatedCard} to={house.path}>
+                <strong>{house.label}</strong>
+                <span>{t("houses.relatedCta")}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
       </section>
       <Footer />
     </div>

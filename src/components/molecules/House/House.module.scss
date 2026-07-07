@@ -142,6 +142,42 @@
       background: #26495e;
     }
   }
+
+  .relatedSection {
+    width: 100%;
+    margin-top: 2.25rem;
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+    background: rgba(255, 253, 249, 0.78);
+    border: 1px solid $border-color;
+    box-shadow: $shadow-card;
+  }
+
+  .relatedGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .relatedCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1rem 1.1rem;
+    border-radius: 1.2rem;
+    text-decoration: none;
+    background: rgba(31, 59, 77, 0.05);
+    color: $primary-color;
+
+    strong {
+      font-size: 1rem;
+    }
+
+    span {
+      color: $muted-text-color;
+      font-size: 0.9rem;
+    }
+  }
 }
 
 .mapSection {
@@ -274,6 +310,10 @@
       .item {
         font-size: 0.92rem;
       }
+    }
+
+    .relatedGrid {
+      grid-template-columns: 1fr;
     }
   }
 

@@ -21,6 +21,7 @@ import {
 } from "./utils/utils";
 import { getHouseInfo } from "./data/housesInfo";
 import { useTranslation } from "react-i18next";
+import { houseRoutes } from "./seo/houseRoutes";
 
 function ScrollToTopLayout() {
   const { pathname } = useLocation();
@@ -54,6 +55,7 @@ function Routes() {
               includes={houseInfo.LuciasHouse.includes}
               overview={houseInfo.LuciasHouse.overview}
               location={houseInfo.LuciasHouse.location}
+              slug={houseRoutes[0].path}
             />
           ),
         },
@@ -67,6 +69,7 @@ function Routes() {
               includes={houseInfo.NievesHouse.includes}
               overview={houseInfo.NievesHouse.overview}
               location={houseInfo.NievesHouse.location}
+              slug={houseRoutes[1].path}
             />
           ),
         },
@@ -80,6 +83,7 @@ function Routes() {
               includes={houseInfo.MariasHouse.includes}
               overview={houseInfo.MariasHouse.overview}
               location={houseInfo.MariasHouse.location}
+              slug={houseRoutes[2].path}
             />
           ),
         },
@@ -93,6 +97,7 @@ function Routes() {
               includes={houseInfo.CasaAzul.includes}
               overview={houseInfo.CasaAzul.overview}
               location={houseInfo.CasaAzul.location}
+              slug={houseRoutes[4].path}
             />
           ),
         },
@@ -106,6 +111,7 @@ function Routes() {
               includes={houseInfo.CasaAzulCorazon.includes}
               overview={houseInfo.CasaAzulCorazon.overview}
               location={houseInfo.CasaAzulCorazon.location}
+              slug={houseRoutes[5].path}
             />
           ),
         },
@@ -119,6 +125,7 @@ function Routes() {
               includes={houseInfo.BegosHouse.includes}
               overview={houseInfo.BegosHouse.overview}
               location={houseInfo.BegosHouse.location}
+              slug={houseRoutes[3].path}
             />
           ),
         },
@@ -132,6 +139,7 @@ function Routes() {
               includes={houseInfo.ChangosHouse.includes}
               overview={houseInfo.ChangosHouse.overview}
               location={houseInfo.ChangosHouse.location}
+              slug={houseRoutes[6].path}
             />
           ),
         },
@@ -145,6 +153,7 @@ function Routes() {
               includes={houseInfo.EstudioTiliche.includes}
               overview={houseInfo.EstudioTiliche.overview}
               location={houseInfo.EstudioTiliche.location}
+              slug={houseRoutes[7].path}
             />
           ),
         },

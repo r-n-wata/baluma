@@ -81,7 +81,7 @@ export const getHouseInfo = (t: TFunction): Record<string, HouseInfo> => ({
       bathrooms: 2,
       people: 7,
     },
-    location: createLocation(t("houses.casaAzul.name"), "18.675610, -8.389626"),
+    location: createLocation(t("houses.casaAzul.name"), "18.675610, -88.389626"),
   },
   CasaAzulCorazon: {
     name: t("houses.casaAzulCorazon.name"),
@@ -117,7 +117,7 @@ export const getHouseInfo = (t: TFunction): Record<string, HouseInfo> => ({
       bathrooms: 1,
       people: 4,
     },
-    location: createLocation(t("houses.changos.name"), "18.672401, -18.394440"),
+    location: createLocation(t("houses.changos.name"), "18.672401, -88.394440"),
   },
   EstudioTiliche: {
     name: t("houses.tiliche.name"),
@@ -128,6 +128,6 @@ export const getHouseInfo = (t: TFunction): Record<string, HouseInfo> => ({
       bathrooms: 1,
       people: 2,
     },
-    location: createLocation(t("houses.tiliche.name"), "18.659409, -88400177"),
+    location: createLocation(t("houses.tiliche.name"), "18.659409, -88.400177"),
   },
 });
