@@ -76,8 +76,35 @@ import begosHouse1 from "/src/assets/begosHouse/01.jpg";
 import begosHouse2 from "/src/assets/begosHouse/02.jpg";
 import begosHouse3 from "/src/assets/begosHouse/03.jpg";
 import begosHouse4 from "/src/assets/begosHouse/04.jpg";
+import begosHouse5 from "/src/assets/begosHouse/05.jpg";
+import begosHouse6 from "/src/assets/begosHouse/06.jpg";
+import begosHouse7 from "/src/assets/begosHouse/07.jpg";
+import begosHouse8 from "/src/assets/begosHouse/08.jpg";
+import begosHouse9 from "/src/assets/begosHouse/09.jpg";
+import begosHouse10 from "/src/assets/begosHouse/10.jpg";
+import begosHouse11 from "/src/assets/begosHouse/11.jpg";
+import begosHouse12 from "/src/assets/begosHouse/12.jpg";
+import begosHouse13 from "/src/assets/begosHouse/13.jpg";
+import begosHouse14 from "/src/assets/begosHouse/14.jpg";
+import begosHouse15 from "/src/assets/begosHouse/15.jpg";
 
-export const begosHouse = [begosHouse1, begosHouse2, begosHouse3, begosHouse4];
+export const begosHouse = [
+  begosHouse1,
+  begosHouse2,
+  begosHouse3,
+  begosHouse4,
+  begosHouse5,
+  begosHouse6,
+  begosHouse7,
+  begosHouse8,
+  begosHouse9,
+  begosHouse10,
+  begosHouse11,
+  begosHouse12,
+  begosHouse13,
+  begosHouse14,
+  begosHouse15,
+];
 
 import casaAzulCorazon1 from "/src/assets/casaAzulCorazon/01.jpg";
 import casaAzulCorazon2 from "/src/assets/casaAzulCorazon/02.jpg";
